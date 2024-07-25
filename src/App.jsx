@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import { Route, Routes } from "react-router-dom"
+import "./App.css"
 
-import Button, { colours } from "./components/atoms/button/button"
+import { Route, Routes } from "react-router-dom"
+import styled from "styled-components"
+
 import Header1 from "./components/organisms/Header/Header"
 import Article from "./Pages/Article/Article"
 import Cart from "./Pages/Cart/Cart"
@@ -12,18 +13,9 @@ import Register from "./Pages/Register/Register"
 import Shop from "./Pages/Shop/Shop"
 
 const App = () => {
-   const [colourBtn, setColoutBtn] = useState()
    return (
       <>
          <Header1 />
-         <Button
-            $primary={colourBtn}
-            onClick={() => {
-               setColoutBtn(colours[Math.floor(Math.random() * colours.length)])
-            }}
-         >
-            Click
-         </Button>
          <Routes>
             <Route path='/' index element={<Home />} />
             <Route path='/shop' element={<Shop />} />
@@ -38,3 +30,23 @@ const App = () => {
 }
 
 export default App
+export const Flex = styled.div`
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   align-items: center;
+   &[id="shadow-header"] {
+      position: absolute;
+      z-index: 0;
+      top: 80px;
+      width: 100svw;
+      height: 110px;
+      background: rgb(217, 217, 217);
+      background: linear-gradient(
+         180deg,
+         rgba(217, 217, 217, 1) 0%,
+         rgba(255, 255, 255, 1) 90%
+      );
+      left: 0;
+   }
+`

@@ -1,96 +1,42 @@
-import { NavLink } from "react-router-dom"
+import styled from "styled-components"
 
-import Icon, { Img } from "../../atoms/Icon/Icon"
+import { Flex } from "../../../App"
+import {
+   arrayListHeader,
+   arraySvgHeader,
+} from "../../../data/arrayListHeader/arrayListHeader"
+import Li from "../../atoms/Li/Li"
+import LogoTitle from "../../atoms/LogoTitle/LogoTitle"
+import List from "../../molecules/List/List"
 
 const Header1 = () => {
    return (
-      <header>
-         <h1>Lion</h1>
-         <nav>
-            <ul>
-               <NavLink to='/shop'>Shop</NavLink>
-               <NavLink>
-                  <svg
-                     width='89px'
-                     height='89px'
-                     viewBox='0 -2 48 48'
-                     xmlns='http://www.w3.org/2000/svg'
-                     fill='#000000'
-                  >
-                     <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
-                     <g
-                        id='SVGRepo_tracerCarrier'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                     ></g>
-                     <g id='SVGRepo_iconCarrier'>
-                        {" "}
-                        <g
-                           id='Group_17'
-                           data-name='Group 17'
-                           transform='translate(-626 -216)'
-                        >
-                           {" "}
-                           <g id='Group_15' data-name='Group 15'>
-                              {" "}
-                              <rect
-                                 id='Rectangle_7'
-                                 data-name='Rectangle 7'
-                                 width='4'
-                                 height='10'
-                                 transform='translate(646 230)'
-                                 fill='#4162af'
-                              ></rect>{" "}
-                              <rect
-                                 id='Rectangle_8'
-                                 data-name='Rectangle 8'
-                                 width='4'
-                                 height='10'
-                                 transform='translate(654 230)'
-                                 fill='#4162af'
-                              ></rect>{" "}
-                              <path
-                                 id='Path_16'
-                                 data-name='Path 16'
-                                 d='M666,236l-4,4V230h4Z'
-                                 fill='#4162af'
-                              ></path>{" "}
-                           </g>{" "}
-                           <g id='Group_16' data-name='Group 16'>
-                              {" "}
-                              <path
-                                 id='Path_17'
-                                 data-name='Path 17'
-                                 d='M671,224H641a1,1,0,0,1-1-1v-4a3,3,0,0,0-3-3H626v2h.1a5.007,5.007,0,0,0,3.991,3.908A5,5,0,0,0,635,226h3v14h2V225.816a2.966,2.966,0,0,0,1,.184h30a1,1,0,0,1,1,1v7a5.136,5.136,0,0,1-1.081,2.818l-6.324,7.027A4.189,4.189,0,0,1,662,245H641a3,3,0,0,0-3,3v2.1a5,5,0,1,0,5.9,5.9h8.2a5,5,0,1,0,0-2h-8.2a5.016,5.016,0,0,0-3.9-3.9V248a1,1,0,0,1,1-1h21a6.076,6.076,0,0,0,4.081-1.818l6.324-7.027A7.071,7.071,0,0,0,674,234v-7A3,3,0,0,0,671,224Zm-42.816-6H637a1,1,0,0,1,1,1v1h-7A3,3,0,0,1,628.184,218ZM635,224a3,3,0,0,1-2.816-2H638v2Zm22,28a3,3,0,1,1-3,3A3,3,0,0,1,657,252Zm-15,3a3,3,0,1,1-3-3A3,3,0,0,1,642,255Z'
-                                 fill='#0000ad'
-                              ></path>{" "}
-                              <path
-                                 id='Path_18'
-                                 data-name='Path 18'
-                                 d='M657,256.5a1.5,1.5,0,1,0-1.5-1.5A1.5,1.5,0,0,0,657,256.5Zm0-2a.5.5,0,1,1-.5.5A.5.5,0,0,1,657,254.5Z'
-                                 fill='#0000ad'
-                              ></path>{" "}
-                              <path
-                                 id='Path_19'
-                                 data-name='Path 19'
-                                 d='M637.5,255a1.5,1.5,0,1,0,1.5-1.5A1.5,1.5,0,0,0,637.5,255Zm2,0a.5.5,0,1,1-.5-.5A.5.5,0,0,1,639.5,255Z'
-                                 fill='#0000ad'
-                              ></path>{" "}
-                           </g>{" "}
-                        </g>{" "}
-                     </g>
-                  </svg>
-               </NavLink>
-               <NavLink to='login'>Log in</NavLink>
-            </ul>
-            <Icon />
-         </nav>
-         <Img
-            src='https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/do1hj5ceiumdbmhrv0at'
-            loading='lazy'
-         />
-      </header>
+      <>
+         <Flex id='shadow-header' />
+         <Header>
+            <LogoTitle>
+               <Li text='LinkFashion Store' />
+            </LogoTitle>
+            <List arrayList={arrayListHeader} idName='container-li-clothes' />
+            <List
+               arrayList={arraySvgHeader}
+               button={true}
+               idName='container-icons'
+            />
+         </Header>
+      </>
    )
 }
 
 export default Header1
+
+const Header = styled.header`
+   position: relative;
+   z-index: 10;
+   display: flex;
+   justify-content: space-between;
+   height: 99px;
+   align-items: center;
+   gap: 100px;
+   background-color: white;
+`
