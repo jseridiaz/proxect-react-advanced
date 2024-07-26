@@ -6,7 +6,8 @@ import H2 from "../../components/atoms/H2/H2"
 import ImgHero from "../../components/atoms/Img/Img"
 import Li from "../../components/atoms/Li/Li"
 import Hero from "../../components/organisms/Hero/Hero"
-import SectionCollection from "../../components/organisms/SectionCollection/SectionCollection"
+import SectionCategories from "../../components/organisms/Home/SectionCategories/SectionCategories"
+import SectionCollection from "../../components/organisms/Home/SectionCollection/SectionCollection"
 import { arrayPicturesHero } from "../../data/arrayPicturesHero/arrayPicturesHero"
 
 const Home = () => {
@@ -43,9 +44,8 @@ const Home = () => {
             </Article>
             <div id='effect-rounded'></div>
          </Hero>
-         <SectionCollection>
-            <h2>Prueba</h2>
-         </SectionCollection>
+         <SectionCollection />
+         <SectionCategories />
       </>
    )
 }

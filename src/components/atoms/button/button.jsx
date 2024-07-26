@@ -53,6 +53,25 @@ const StyledButton = styled.button`
       transform: scale(1.05);
    }
 
+   &[id="left-arrow"],
+   &[id="rigth-arrow"] {
+      position: absolute;
+      z-index: 2;
+      width: 60px;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      img {
+         width: 100%;
+         height: 100%;
+      }
+   }
+   &[id="rigth-arrow"] {
+      transform: rotate(180deg);
+      left: 100%;
+   }
+
    /* &[id="btn-main-cta"]{
       ba
    } */

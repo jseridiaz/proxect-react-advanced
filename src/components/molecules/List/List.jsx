@@ -4,18 +4,19 @@ import styled from "styled-components"
 import Button from "../../atoms/button/button"
 import Li from "../../atoms/Li/Li"
 
-const List = ({ arrayList, button = false, textBtn = null, idName = null }) => {
+const List = ({ arrayList, button = false, textBtn = false, idName = null }) => {
    return (
       <NavStyled id={idName}>
          <Ul as='ul'>
-            {arrayList.map(el => (
+            {arrayList.map((el, index) => (
                <li key={el}>
                   {!button ? (
                      <Li key={`${el}-li`} to='shop'>
                         {el}
                      </Li>
                   ) : (
-                     <Button key={el.alt} text={textBtn}>
+                     <Button key={textBtn ? el + index : el.alt}>
+                        {textBtn && el}
                         {el.svg}
                      </Button>
                   )}

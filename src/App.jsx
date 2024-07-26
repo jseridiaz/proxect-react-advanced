@@ -31,6 +31,12 @@ const App = () => {
 }
 
 export default App
+export const DisplayFlex = styled.div`
+   display: flex;
+   justify-content: center;
+   align-items: center;
+`
+
 export const Flex = styled.div`
    display: flex;
    justify-content: space-around;

@@ -70,6 +70,25 @@ const ContainerImg = styled.div`
    &[id="container-picture-0"] ~ div > div {
       padding-bottom: var(--jd-padding-m);
    }
+   &.card-single {
+      border: 1px solid black;
+      position: relative;
+      height: 425px;
+      overflow: hidden;
+      border-radius: var(--jd-br-card);
+      > img {
+         object-position: 50% 0%;
+         object-fit: contain;
+         width: 100%;
+         height: 100%;
+      }
+   }
+   &.card-single:last-child {
+      > img {
+         object-fit: fill;
+         border-radius: var(--jd-br-l);
+      }
+   }
 `
 
 export default ImgHero
