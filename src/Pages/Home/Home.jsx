@@ -8,6 +8,7 @@ import Li from "../../components/atoms/Li/Li"
 import Hero from "../../components/organisms/Hero/Hero"
 import SectionCategories from "../../components/organisms/Home/SectionCategories/SectionCategories"
 import SectionCollection from "../../components/organisms/Home/SectionCollection/SectionCollection"
+import SectionFeatures from "../../components/organisms/Home/SectionFeatures/SectionFeatures"
 import { arrayPicturesHero } from "../../data/arrayPicturesHero/arrayPicturesHero"
 
 const Home = () => {
@@ -46,6 +47,7 @@ const Home = () => {
          </Hero>
          <SectionCollection />
          <SectionCategories />
+         {/* <SectionFeatures /> */}
       </>
    )
 }
