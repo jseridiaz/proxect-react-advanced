@@ -34,6 +34,7 @@ const Header = styled.header`
    position: relative;
    z-index: 10;
    display: flex;
+   width: 100%;
    justify-content: space-between;
    height: 99px;
    align-items: center;

@@ -18,6 +18,7 @@ const App = () => {
          <Header1 />
          <Routes>
             <Route path='/' index element={<Home />} />
+            <Route path='/home' element={<Home />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/shop/:id' element={<Article />} />
             <Route path='/cart' element={<Cart />} />
@@ -39,7 +40,8 @@ export const Flex = styled.div`
       position: absolute;
       z-index: 0;
       top: 80px;
-      width: 100svw;
+      max-width: 100%;
+      width: 100%;
       height: 110px;
       background: rgb(217, 217, 217);
       background: linear-gradient(

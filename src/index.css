@@ -17,22 +17,22 @@
    --jd-padding-m: 15px;
    --jd-padding-l: 20px;
    --jd-padding-xl: 30px;
-   --jd-padding-xll: 40px;
+   --jd-padding-xxl: 40px;
 
    --jd-margin-xs: 5px;
    --jd-margin-s: 10px;
    --jd-margin-m: 15px;
    --jd-margin-l: 20px;
    --jd-margin-xl: 30px;
-   --jd-margin-xll: 40px;
+   --jd-margin-xxl: 40px;
 
    --jd-gap-xs: 5px;
    --jd-gap-s: 10px;
    --jd-gap-m: 15px;
    --jd-gap-l: 20px;
    --jd-gap-xl: 30px;
-   --jd-gap-xll: 40px;
-
-   /*  bgColor*/
-   --jd-bg-none: transparent;
+   --jd-gap-xxl: 40px;
+}
+body {
+   max-width: 100svw;
 }
