@@ -1,10 +1,28 @@
 import styled from "styled-components"
+
+import Li from "../Li/Li"
 export const colours = ["#0000ff", "#00ff26", "#ee2e2e"]
-const Button = ({ id, text = null, children = null, bgColor, fontColor }) => (
-   <StyledButton id={id} $primary={bgColor} $color={fontColor}>
-      {text}
-      {children}
-   </StyledButton>
+const Button = ({
+   id,
+   text = null,
+   children = null,
+   bgColor,
+   fontColor,
+   goTo = false,
+}) => (
+   <>
+      {goTo ? (
+         <Li id={id} className='link-button' to={goTo}>
+            {text}
+            {children}
+         </Li>
+      ) : (
+         <StyledButton id={id} $primary={bgColor} $color={fontColor}>
+            {text}
+            {children}
+         </StyledButton>
+      )}
+   </>
 )
 
 const StyledButton = styled.button`
@@ -34,6 +52,7 @@ const StyledButton = styled.button`
    &:hover {
       transform: scale(1.05);
    }
+
    /* &[id="btn-main-cta"]{
       ba
    } */
