@@ -34,18 +34,32 @@ const SectionFlex = styled.section`
    align-items: center;
    > h2 {
       width: 100%;
-      padding: var(--jd-padding-xl);
+      padding: var(--jd-padding-xl) var(--jd-padding-l) var(--jd-padding-s)
+         var(--jd-padding-l);
    }
    > nav {
       padding: var(--jd-padding-xxl);
       width: 80%;
       > ul {
          margin-inline: auto;
-         width: 90%;
+         width: 82.2%;
          justify-content: space-evenly;
          letter-spacing: 0.3px;
          > li {
-            padding: var(--jd-padding-xs);
+            padding: var(--jd-padding-xs) var(--jd-padding-s);
+            transition: all 0.5s ease;
+            border-radius: var(--jd-br-li);
+            &:hover {
+               background-color: var(--jd-bg-card);
+            }
+            &:hover > a {
+               color: black;
+            }
+            a {
+               font-size: 18px;
+               color: rgba(0, 0, 0, 0.756);
+               font-weight: 600;
+            }
          }
       }
    }

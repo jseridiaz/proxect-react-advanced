@@ -38,6 +38,7 @@
    --jd-bg-card: #ede0cc;
 
    /* border-radius */
+   --jd-br-li: 14px;
    --jd-br-card: 20px;
 }
 body {

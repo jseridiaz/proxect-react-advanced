@@ -43,6 +43,8 @@ const ContainerDescription = styled.div`
       gap: var(--jd-gap-s);
    }
    button {
-      transform: translateY(25%);
+      position: relative;
+      top: 15px;
+      align-content: center;
    }
 `
