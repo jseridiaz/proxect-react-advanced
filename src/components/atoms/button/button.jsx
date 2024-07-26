@@ -2,7 +2,8 @@ import styled from "styled-components"
 export const colours = ["#0000ff", "#00ff26", "#ee2e2e"]
 const Button = ({ id, text = null, children = null, bgColor, fontColor }) => (
    <StyledButton id={id} $primary={bgColor} $color={fontColor}>
-      {text || children}
+      {text}
+      {children}
    </StyledButton>
 )
 

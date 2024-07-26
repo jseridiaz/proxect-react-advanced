@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Flex } from "../../App"
 import Button from "../../components/atoms/button/button"
 import H2 from "../../components/atoms/H2/H2"
 import ImgHero from "../../components/atoms/Img/Img"
