@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 import H2 from "../../../atoms/H2/H2"
 import ImgHero from "../../../atoms/Img/Img"
@@ -6,8 +7,8 @@ import Description from "../../../molecules/Description/Description"
 
 const SectionFeatures = () => {
    return (
-      <SectionFeatures>
-         <H2>Featured and Special Offer</H2>
+      <SectionBlock>
+         <H2>Featured and Special Offers</H2>
          <ImgHero
             className='features-picture-container'
             img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722029615/street-style-tyler-joe-1-1674752623-1_z16ji3.webp'
@@ -32,8 +33,8 @@ const SectionFeatures = () => {
          </ImgHero>
          <ImgHero
             className='features-picture-container'
-            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722029615/ww-brands-anyday-v2-010923-1_c8gp7y.webp'
-            alt='picture-collection-john-lewis'
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722030840/Proyect%2012%20react/images/yjol4wv4mzyiayksvpir.webp'
+            alt='picture-with-special-50%-summer-offer'
          >
             <Description
                h3='Save 50% this Holiday season'
@@ -42,8 +43,21 @@ const SectionFeatures = () => {
                btn='Shop now'
             />
          </ImgHero>
-      </SectionFeatures>
+      </SectionBlock>
    )
 }
 
 export default SectionFeatures
+
+const SectionBlock = styled.section`
+   display: flex;
+   flex-wrap: wrap;
+   padding: calc(var(--jd-padding-xxl) * 2.1);
+   justify-content: space-around;
+   column-gap: var(--jd-gap-m);
+   row-gap: var(--jd-gap-xxl);
+   h2 {
+      width: 100%;
+      padding: var(--jd-padding-l) var(--jd-padding-l) var(--jd-padding-xxl);
+   }
+`

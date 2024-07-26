@@ -89,6 +89,46 @@ const ContainerImg = styled.div`
          border-radius: var(--jd-br-l);
       }
    }
+   &.features-picture-container:not(:last-child) {
+      width: 49%;
+      position: relative;
+      > div {
+         gap: var(--jd-padding-m);
+         padding: 30px;
+         width: 80%;
+         a {
+            outline: 2px solid white;
+            height: 50px;
+            width: 30%;
+            padding: var(--jd-padding-xs);
+            font-weight: 500;
+         }
+      }
+   }
+   &.features-picture-container:last-child {
+      width: 100%;
+      height: 364px;
+      position: relative;
+      background-color: var(--jd-card-card-offer);
+      border-radius: var(--jd-br-card);
+      a {
+         outline: 2px solid white;
+      }
+      > img {
+         position: absolute;
+         width: 32%;
+         right: 0;
+         top: 0;
+      }
+      > div {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         width: 65%;
+         height: 100%;
+         padding: var(--jd-padding-xl);
+      }
+   }
 `
 
 export default ImgHero

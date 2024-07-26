@@ -33,6 +33,7 @@ const SectionCollection = () => {
                      p={el.parraf}
                      btn={el.btn}
                      className='info-pictures'
+                     arrow={true}
                   />
                   {index == 0 ? (
                      <Li to='/shop'>

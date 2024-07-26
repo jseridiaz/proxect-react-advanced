@@ -47,7 +47,7 @@ const Home = () => {
          </Hero>
          <SectionCollection />
          <SectionCategories />
-         {/* <SectionFeatures /> */}
+         <SectionFeatures />
       </>
    )
 }
