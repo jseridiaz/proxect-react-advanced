@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-const Li = ({ text = null, children, to, className }) => {
+const Li = ({ text = null, children, to, id, className }) => {
    return (
-      <StyledLi className={className} to={to}>
+      <StyledLi id={id} className={className} to={to}>
          {text}
          {children}
       </StyledLi>
@@ -16,6 +16,11 @@ export const StyledLi = styled(Link)`
    width: fit-content;
    height: fit-content;
    font-size: 20px;
+   &[id="logo-title-a"] {
+      order: 0;
+      position: relative;
+      left: 2%;
+   }
    &.btn-card {
       position: absolute;
       bottom: 0;

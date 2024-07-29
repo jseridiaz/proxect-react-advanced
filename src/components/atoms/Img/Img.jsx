@@ -99,7 +99,7 @@ const ContainerImg = styled.div`
          a {
             outline: 2px solid white;
             height: 50px;
-            width: 30%;
+            width: 40%;
             padding: var(--jd-padding-xs);
             font-weight: 500;
          }
@@ -127,6 +127,97 @@ const ContainerImg = styled.div`
          width: 65%;
          height: 100%;
          padding: var(--jd-padding-xl);
+      }
+   }
+   @media (max-width: 1254px) {
+      &[id="title-section-colection"] {
+         grid-column: 1/-1;
+      }
+      &[id="container-picture-0"] {
+         grid-column: 1/-1;
+         min-height: 520px;
+         > img {
+            object-fit: cover;
+         }
+      }
+      &[id="container-picture-1"] {
+         grid-column: 1/-1;
+         grid-row: 3/4;
+      }
+      &[id="container-picture-2"] {
+         grid-column: 1/2;
+         grid-row: 4/5;
+      }
+      &[id="container-picture-3"] {
+         grid-column: 2/3;
+         grid-row: 4/5;
+      }
+      &.features-picture-container:not(:last-child) {
+         width: 90%;
+      }
+   }
+   @media (width<1002px) {
+      &.features-picture-container:last-child {
+         height: 450px;
+         > div {
+            min-width: 490px;
+         }
+         > img {
+            object-fit: cover;
+            object-position: 10%;
+         }
+      }
+   }
+   @media (width<839px) {
+      &.features-picture-container:last-child {
+         height: 850px;
+         flex-wrap: wrap;
+
+         > div {
+            min-width: 0px;
+            width: 100%;
+            height: 50%;
+         }
+         > img {
+            border-radius: 20px 20px 0px 0px;
+            align-self: start;
+            position: relative;
+            object-fit: fill;
+            width: 100%;
+            height: 50%;
+         }
+      }
+   }
+   @media (width<800px) {
+      &.features-picture-container:not(:last-child) {
+         > div {
+            > h3 {
+               font-size: 29px;
+            }
+         }
+      }
+   }
+   @media (width<438px) {
+      &.features-picture-container:not(:last-child) {
+         > div {
+            width: 100%;
+            padding: var(--jd-padding-xs);
+         }
+      }
+      &.features-picture-container:last-child {
+         height: 800px;
+         > img {
+            height: 40%;
+         }
+         > div {
+            height: 65%;
+            > h3 {
+               font-size: 30px;
+            }
+            > p {
+               font-size: 17px;
+            }
+         }
       }
    }
 `

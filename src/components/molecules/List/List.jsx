@@ -4,14 +4,20 @@ import styled from "styled-components"
 import Button from "../../atoms/button/button"
 import Li from "../../atoms/Li/Li"
 
-const List = ({ arrayList, button = false, textBtn = false, idName = null }) => {
+const List = ({
+   arrayList,
+   button = false,
+   textBtn = false,
+   idName = null,
+   goTo = "/shop",
+}) => {
    return (
       <NavStyled id={idName}>
          <Ul as='ul'>
             {arrayList.map((el, index) => (
                <li key={el}>
                   {!button ? (
-                     <Li key={`${el}-li`} to='shop'>
+                     <Li key={`${el}-li`} to={goTo}>
                         {el}
                      </Li>
                   ) : (
@@ -36,6 +42,7 @@ const NavStyled = styled.nav`
    flex-wrap: wrap;
    &[id="container-li-clothes"] {
       width: 50%;
+      min-width: 317px;
       > ul {
          justify-content: space-evenly;
          li {
@@ -73,6 +80,19 @@ const NavStyled = styled.nav`
          }
       }
    }
+   @media (max-width: 860px) {
+      &[id="container-li-clothes"] {
+         position: relative;
+
+         > ul {
+            flex-direction: column;
+         }
+      }
+      &[id="container-icons"] {
+         order: 1;
+         right: 0px;
+      }
+   }
 `
 
 const Ul = styled(NavStyled)`
@@ -80,4 +100,8 @@ const Ul = styled(NavStyled)`
    font-weight: bold;
    width: 100%;
    justify-content: space-around;
+
+   @media (width<380px) {
+      padding: var(--jd-padding-xs);
+   }
 `

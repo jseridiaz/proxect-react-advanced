@@ -17,10 +17,6 @@ const SectionCategories = () => {
             <List arrayList={arrayListCategories} idName='nav-categories' />
             <Slides array={arrayCards} />
          </SectionFlex>
-         {/* {arrayCards.map(el => ( */}
-
-         {/* <DescriptionCard name={el.title} infoArticle={el.description} /> */}
-         {/* // ))} */}
       </>
    )
 }
@@ -61,6 +57,16 @@ const SectionFlex = styled.section`
                font-weight: 600;
             }
          }
+      }
+   }
+   @media (width < 700px) {
+      > nav {
+         width: 100%;
+         padding: 5px;
+      }
+      > nav > ul {
+         width: 100%;
+         padding: 5px;
       }
    }
 `

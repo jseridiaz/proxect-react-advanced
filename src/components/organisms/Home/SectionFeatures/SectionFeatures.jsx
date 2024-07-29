@@ -60,4 +60,44 @@ const SectionBlock = styled.section`
       width: 100%;
       padding: var(--jd-padding-l) var(--jd-padding-l) var(--jd-padding-xxl);
    }
+   .features-picture-container:not(:last-child) {
+      width: 49%;
+   }
+   @media (width<1241px) {
+      .features-picture-container:not(:last-child) {
+         width: 100%;
+      }
+   }
+   @media (width<844px) {
+      .features-picture-container:not(:last-child) {
+         > div {
+            width: 90%;
+         }
+      }
+   }
+   @media (width<716px) {
+      .features-picture-container:not(:last-child) {
+         height: 550px;
+         > img {
+            border-radius: 20px;
+            object-fit: cover;
+         }
+      }
+   }
+   @media (width<556px) {
+      padding: var(--jd-padding-m);
+      .features-picture-container:not(:last-child) {
+         > div {
+            width: 100%;
+            padding: var(--jd-padding-xs);
+            > h3 {
+               font-size: 29px;
+            }
+            a.link-button {
+               width: 70%;
+               height: 50px;
+            }
+         }
+      }
+   }
 `

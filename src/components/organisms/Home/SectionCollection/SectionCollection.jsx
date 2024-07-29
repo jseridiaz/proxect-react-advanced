@@ -33,7 +33,6 @@ const SectionCollection = () => {
                      p={el.parraf}
                      btn={el.btn}
                      className='info-pictures'
-                     arrow={true}
                   />
                   {index == 0 ? (
                      <Li to='/shop'>
@@ -60,4 +59,8 @@ export const SectionGrid = styled.section`
    justify-items: center;
    grid-template-columns: 0.8fr 0.8fr minmax(461px, 1fr);
    gap: calc(var(--jd-gap-m) + 5px);
+   @media (max-width: 1254px) {
+      padding: var(--jd-padding-m);
+      grid-template-columns: 1fr 1fr;
+   }
 `

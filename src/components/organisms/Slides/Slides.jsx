@@ -38,5 +38,5 @@ const CarouselContainer = styled.div`
 const Ul = styled.ul`
    display: flex;
    gap: 20px;
-   justify-content: start;
+   justify-content: center;
 `

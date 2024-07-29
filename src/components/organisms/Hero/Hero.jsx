@@ -61,5 +61,29 @@ const Hero = styled.section`
       bottom: -65.1%;
       height: 611.3px;
    }
+
+   @media (max-width: 1065px) {
+      [id="article-hero-pictures"] {
+         justify-content: center;
+         gap: var(--jd-gap-xxl);
+      }
+   }
+   @media (max-width: 666px) {
+      > div [id="description-hero"] {
+         padding: var(--jd-padding-s);
+      }
+   }
+   @media (max-width: 520px) {
+      > div {
+         width: 95%;
+         > h2 {
+            font-size: 39px;
+            width: 100%;
+         }
+         > p[id="description-hero"] {
+            padding-inline: calc(var(--jd-padding-l) * 1.5);
+         }
+      }
+   }
 `
 export default Hero
