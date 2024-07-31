@@ -15,5 +15,20 @@ const H2 = styled.h2`
       grid-row: 1/2;
       padding-bottom: calc(var(--jd-padding-xxl) * 3);
    }
+   @media (max-width: 1254px) {
+      &[id="title-section-colection"] {
+         grid-column: 1/-1;
+         padding-bottom: 0px;
+      }
+   }
+   @media (max-width: 1254px) {
+      &[id="title-section-colection"] {
+         grid-column: 1/-1;
+         padding-bottom: 0px;
+      }
+   }
+   @media (max-width: 444px) {
+      font-size: 37px;
+   }
 `
 export default H2

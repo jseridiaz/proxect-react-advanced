@@ -6,11 +6,14 @@ import { HelmetProvider } from "react-helmet-async"
 import { BrowserRouter } from "react-router-dom"
 
 import App from "./App.jsx"
+import CartContextProvider from "./utils/useContext/useContextCart.jsx"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-   <BrowserRouter basename='/'>
-      <HelmetProvider>
-         <App />
-      </HelmetProvider>
-   </BrowserRouter>,
+   <CartContextProvider>
+      <BrowserRouter basename='/'>
+         <HelmetProvider>
+            <App />
+         </HelmetProvider>
+      </BrowserRouter>
+   </CartContextProvider>,
 )

@@ -34,16 +34,38 @@
    --jd-gap-xl: 30px;
    --jd-gap-xxl: 40px;
    /* bd color */
+   --jd-bgcolor-primary: white;
+   --jd-bg-secundary: #d9d9d9;
    --jd-bg-btn-navigate: #d9d9d9;
    --jd-bg-card: #ede0cc;
+   --jd-card-card-offer: #254c22;
 
    /* border-radius */
+   --jd-br-s: 4px;
    --jd-br-li: 14px;
    --jd-br-card: 20px;
+
+   /* border-color */
+   --jd-color-br-primary: 1px solid black;
+   --jd-color-br-hover: 2px solid #767676;
+   --jd-color-br-focus: 2px solid #4200ff;
 }
 body {
    max-width: 100svw;
 }
 .flex {
    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+@media (width<380px) {
+   .flex {
+      padding: var(--jd-padding-s);
+      > div.single-img {
+         width: 100%;
+         > img {
+            object-fit: cover;
+         }
+      }
+   }
 }

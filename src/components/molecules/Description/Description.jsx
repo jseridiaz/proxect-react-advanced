@@ -5,7 +5,7 @@ import H3 from "../../atoms/H3/H3"
 import ImgHero from "../../atoms/Img/Img"
 import Parraf from "../../atoms/Parraf/Parraf"
 
-const Description = ({ h3, p, btn, img, children, className, id }) => {
+const Description = ({ h3, p, btn, img, arrow, children, className, id }) => {
    return (
       <DivColumn id={id} className={className}>
          {h3 && <H3>{h3}</H3>}
@@ -13,10 +13,12 @@ const Description = ({ h3, p, btn, img, children, className, id }) => {
          {btn && (
             <Button goTo='/shop' id={id}>
                {btn}
-               <ImgHero
-                  img='https://res.cloudinary.com/ddybbosdk/image/upload/v1721973582/Proyect%2012%20react/Resources/Vector_ixjxhk.png'
-                  alt='icon-arrow-visit-shop'
-               />
+               {arrow && (
+                  <ImgHero
+                     img='https://res.cloudinary.com/ddybbosdk/image/upload/v1721973582/Proyect%2012%20react/Resources/Vector_ixjxhk.png'
+                     alt='icon-arrow-visit-shop'
+                  />
+               )}
             </Button>
          )}
          {children}

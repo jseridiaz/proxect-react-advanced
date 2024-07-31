@@ -2,10 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import arrayCards from "../../../../data/Home/sectionCategories/arrayCards/arrayCards"
-// import arrayCards from "../../../../data/Home/sectionCategories/arrayCards/arrayCards"
 import { arrayListCategories } from "../../../../data/Home/sectionCategories/arrayListCategories/arrayListCategories"
 import H2 from "../../../atoms/H2/H2"
-// import DescriptionCard from "../../../molecules/DescriptionCard/DescriptionCard"
 import List from "../../../molecules/List/List"
 import Slides from "../../Slides/Slides"
 
@@ -17,10 +15,6 @@ const SectionCategories = () => {
             <List arrayList={arrayListCategories} idName='nav-categories' />
             <Slides array={arrayCards} />
          </SectionFlex>
-         {/* {arrayCards.map(el => ( */}
-
-         {/* <DescriptionCard name={el.title} infoArticle={el.description} /> */}
-         {/* // ))} */}
       </>
    )
 }
@@ -61,6 +55,21 @@ const SectionFlex = styled.section`
                font-weight: 600;
             }
          }
+      }
+   }
+   @media (width < 700px) {
+      > nav {
+         width: 100%;
+         padding: 5px;
+      }
+      > nav > ul {
+         width: 100%;
+         padding: 5px;
+      }
+   }
+   @media (width<361px) {
+      > h2 {
+         font-size: 30px;
       }
    }
 `

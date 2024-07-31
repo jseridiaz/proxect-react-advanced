@@ -1,11 +1,16 @@
-import React from "react"
+import { useContext } from "react"
 import styled from "styled-components"
 
+import { CartContext } from "../../../utils/useContext/useContextCart"
 import ImgHero from "../../atoms/Img/Img"
 import DescriptionCard from "../../molecules/DescriptionCard/DescriptionCard"
 
 const Slides = ({ array }) => {
-   //  const [index, setIndex] = useState(0)
+   const { cart, setCart } = useContext(CartContext)
+
+   const handleClick = el => {
+      setCart([...cart, el])
+   }
    return (
       <>
          <CarouselContainer>
@@ -21,6 +26,10 @@ const Slides = ({ array }) => {
                         <DescriptionCard
                            name={el.title}
                            infoArticle={el.description}
+                           price={el.price}
+                           click={() => {
+                              handleClick(el)
+                           }}
                         />
                      </ImgHero>
                   ))}
@@ -38,5 +47,5 @@ const CarouselContainer = styled.div`
 const Ul = styled.ul`
    display: flex;
    gap: 20px;
-   justify-content: start;
+   justify-content: center;
 `

@@ -3,6 +3,7 @@ import "./App.css"
 import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
 
+import FooterComponent from "./components/organisms/Footer/Footer"
 import Header1 from "./components/organisms/Header/Header"
 import Article from "./Pages/Article/Article"
 import Cart from "./Pages/Cart/Cart"
@@ -26,6 +27,7 @@ const App = () => {
             <Route path='/login' element={<Login />} />
             <Route path='*' element={<NotFounded />} />
          </Routes>
+         <FooterComponent />
       </>
    )
 }
