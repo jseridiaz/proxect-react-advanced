@@ -197,7 +197,53 @@ const ContainerImg = styled.div`
          }
       }
    }
+   @media (width<471px) {
+      &[id="container-picture-0"],
+      &[id="container-picture-1"],
+      &[id="container-picture-2"],
+      &[id="container-picture-3"] {
+         > img {
+            border-radius: var(--jd-br-card);
+         }
+         > div {
+            width: 100%;
+            padding-inline: var(--jd-padding-xs);
+            > h3 {
+               font-size: 25px;
+            }
+            > p {
+               font-size: 14px;
+            }
+            > a {
+               width: 35%;
+               font-size: 15px;
+            }
+         }
+      }
+      &[id="container-picture-0"] {
+         min-height: 0px;
+         > img {
+            object-fit: fill;
+            object-position: 80%;
+            height: 400px;
+         }
+      }
+      &[id="container-picture-2"] {
+         grid-column: 1/-1;
+         grid-row: 4/5;
+      }
+      &[id="container-picture-3"] {
+         grid-column: 1/-1;
+         grid-row: 5/6;
+      }
+   }
    @media (width<438px) {
+      &.card-single {
+         width: 85%;
+         > img {
+            object-fit: cover;
+         }
+      }
       &.features-picture-container:not(:last-child) {
          > div {
             width: 100%;

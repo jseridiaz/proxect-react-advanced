@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 
 import Button from "../../atoms/button/button"
@@ -9,16 +8,22 @@ const List = ({
    button = false,
    textBtn = false,
    idName = null,
-   goTo = "/shop",
+   array,
+   opened = false,
+   title,
+   children,
 }) => {
    return (
-      <NavStyled id={idName}>
+      <NavStyled id={idName} navMobile={opened}>
          <Ul as='ul'>
             {arrayList.map((el, index) => (
-               <li key={el}>
+               <li key={`${index}`} title={title && array[index].slice(1)}>
                   {!button ? (
-                     <Li key={`${el}-li`} to={goTo}>
-                        {el}
+                     <Li
+                        key={`${el || index}-li`}
+                        to={array ? array[index] : "/shop"}
+                     >
+                        {el.svg || el}
                      </Li>
                   ) : (
                      <Button key={textBtn ? el + index : el.alt}>
@@ -28,6 +33,7 @@ const List = ({
                   )}
                </li>
             ))}
+            {children}
          </Ul>
       </NavStyled>
    )
@@ -75,8 +81,18 @@ const NavStyled = styled.nav`
       right: 3%;
       > ul {
          flex-wrap: nowrap;
+
          > li {
-            width: 40px;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+               background-color: var(--jd-bg-secundary);
+            }
          }
       }
    }

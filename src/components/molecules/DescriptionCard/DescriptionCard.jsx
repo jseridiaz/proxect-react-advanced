@@ -1,17 +1,17 @@
-import React from "react"
 import styled from "styled-components"
 
 import Button from "../../atoms/button/button"
 
-const DescriptionCard = ({ name, infoArticle }) => {
+const DescriptionCard = ({ name, infoArticle, price, click }) => {
    return (
       <ContainerDescription>
          <div>
             <h4>{name}</h4>
             <p>{infoArticle}</p>
+            <p className='price'>{price}€</p>
          </div>
 
-         <Button>
+         <Button title='Add to cart' action={click}>
             <img
                src='https://res.cloudinary.com/ddybbosdk/image/upload/v1721998538/Proyect%2012%20react/Resources/Shopping_bag_zxoiz1.webp'
                alt='icon-take-in-cart'

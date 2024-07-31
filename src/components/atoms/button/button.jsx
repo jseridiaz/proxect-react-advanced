@@ -9,6 +9,8 @@ const Button = ({
    bgColor,
    fontColor,
    goTo = false,
+   action,
+   title,
 }) => (
    <>
       {goTo ? (
@@ -17,7 +19,13 @@ const Button = ({
             {children}
          </Li>
       ) : (
-         <StyledButton id={id} $primary={bgColor} $color={fontColor}>
+         <StyledButton
+            title={title}
+            onClick={action}
+            id={id}
+            $primary={bgColor}
+            $color={fontColor}
+         >
             {text}
             {children}
          </StyledButton>

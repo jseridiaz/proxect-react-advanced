@@ -63,4 +63,7 @@ export const SectionGrid = styled.section`
       padding: var(--jd-padding-m);
       grid-template-columns: 1fr 1fr;
    }
+   @media (width<471px) {
+      grid-template-rows: auto 400px auto auto auto;
+   }
 `

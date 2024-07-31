@@ -140,8 +140,10 @@ const StyledFooter = styled.footer`
       min-width: 390px;
       justify-content: space-around;
       align-items: start;
+      padding: var(--jd-padding-m) 0px;
       > ul {
          justify-content: start;
+
          li {
             width: 100%;
          }
@@ -205,11 +207,40 @@ const StyledFooter = styled.footer`
    @media (width<1069px) {
       justify-content: center;
       height: fit-content;
+      > div:first-child {
+         h3 {
+            text-align: center;
+         }
+         > p {
+            margin-left: 15px;
+         }
+      }
       > div.second-container {
-         justify-content: space-around;
+         justify-content: space-evenly;
+         width: 100%;
          min-width: 0px;
-         px > ul {
-            width: 46%;
+         gap: var(--jd-gap-m);
+         > ul {
+            width: 32%;
+            align-items: center;
+            padding: var(--jd-padding-m) 0px;
+            > li,
+            p {
+               width: 160px;
+            }
+         }
+         > ul:last-child {
+            > li {
+               width: 180px;
+            }
+         }
+      }
+   }
+   @media (width<818px) {
+      > div.second-container {
+         > ul {
+            width: 208px;
+            justify-content: space-around;
          }
       }
    }
@@ -221,10 +252,14 @@ const StyledFooter = styled.footer`
          width: 100%;
          align-items: center;
          border-top: 1px solid white;
-         justify-content: space-between;
+         justify-content: center;
          > div:first-child {
-            gap: 5px;
+            gap: 0px;
             align-items: start;
+            justify-content: center;
+            > p {
+               width: 180px;
+            }
          }
          > div:last-child {
             min-width: fit-content;
@@ -233,21 +268,31 @@ const StyledFooter = styled.footer`
          }
       }
    }
-   @media (width< 393px) {
+   @media (width< 471px) {
+      > div:first-child {
+         padding-inline: var(--jd-padding-xs);
+         height: fit-content;
+         min-width: fit-content;
+         > h3 {
+            font-size: 40px;
+         }
+         > p {
+            font-size: 18px;
+         }
+      }
       > div.second-container {
          > ul {
-            align-items: center;
-            width: 100%;
             > p {
-               display: flex;
-               flex-direction: row;
-               justify-content: center;
+               align-items: center;
             }
             > li {
-               display: flex;
-               flex-direction: row;
-
-               justify-content: center;
+               position: relative;
+               left: 20px;
+            }
+         }
+         > ul:last-child {
+            > li {
+               left: 30px;
             }
          }
       }

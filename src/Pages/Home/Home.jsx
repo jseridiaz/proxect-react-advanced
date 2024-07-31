@@ -1,18 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 
 import Button from "../../components/atoms/button/button"
 import H2 from "../../components/atoms/H2/H2"
 import ImgHero from "../../components/atoms/Img/Img"
 import Li from "../../components/atoms/Li/Li"
-import FooterComponent from "../../components/organisms/Footer/Footer"
 import Hero from "../../components/organisms/Hero/Hero"
 import SectionCategories from "../../components/organisms/Home/SectionCategories/SectionCategories"
 import SectionCollection from "../../components/organisms/Home/SectionCollection/SectionCollection"
 import SectionFeatures from "../../components/organisms/Home/SectionFeatures/SectionFeatures"
 import { arrayPicturesHero } from "../../data/arrayPicturesHero/arrayPicturesHero"
+import { CartContext } from "../../utils/useContext/useContextCart"
 
 const Home = () => {
+   const { cart, setCart } = useContext(CartContext)
    return (
       <>
          <Hero>
@@ -49,7 +50,6 @@ const Home = () => {
          <SectionCollection />
          <SectionCategories />
          <SectionFeatures />
-         <FooterComponent />
       </>
    )
 }

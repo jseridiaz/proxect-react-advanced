@@ -21,5 +21,14 @@ const H2 = styled.h2`
          padding-bottom: 0px;
       }
    }
+   @media (max-width: 1254px) {
+      &[id="title-section-colection"] {
+         grid-column: 1/-1;
+         padding-bottom: 0px;
+      }
+   }
+   @media (max-width: 444px) {
+      font-size: 37px;
+   }
 `
 export default H2

@@ -41,8 +41,14 @@
    --jd-card-card-offer: #254c22;
 
    /* border-radius */
+   --jd-br-s: 4px;
    --jd-br-li: 14px;
    --jd-br-card: 20px;
+
+   /* border-color */
+   --jd-color-br-primary: 1px solid black;
+   --jd-color-br-hover: 2px solid #767676;
+   --jd-color-br-focus: 2px solid #4200ff;
 }
 body {
    max-width: 100svw;

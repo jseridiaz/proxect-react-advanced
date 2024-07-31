@@ -61,11 +61,32 @@ const Hero = styled.section`
       bottom: -65.1%;
       height: 611.3px;
    }
-
+   @media (width<1409px) {
+      [id="effect-rounded"] {
+         width: 72.0599%;
+         bottom: -45%;
+      }
+   }
    @media (max-width: 1065px) {
       [id="article-hero-pictures"] {
          justify-content: center;
          gap: var(--jd-gap-xxl);
+      }
+      [id="effect-rounded"] {
+         width: 172.0599%;
+         bottom: -41%;
+      }
+   }
+   @media (max-width: 1023px) {
+      [id="effect-rounded"] {
+         width: 280.0599%;
+         bottom: -41%;
+      }
+   }
+   @media (max-width: 740px) {
+      [id="effect-rounded"] {
+         width: 192.0599%;
+         bottom: -24%;
       }
    }
    @media (max-width: 666px) {
@@ -83,6 +104,18 @@ const Hero = styled.section`
          > p[id="description-hero"] {
             padding-inline: calc(var(--jd-padding-l) * 1.5);
          }
+      }
+   }
+   @media (max-width: 444px) {
+      > div {
+         > h2 {
+            font-size: 34px;
+            line-height: 50px;
+         }
+      }
+      [id="effect-rounded"] {
+         width: 292.0599%;
+         bottom: -24%;
       }
    }
 `
