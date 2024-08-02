@@ -17,7 +17,7 @@ import List from "../../molecules/List/List"
 const Header1 = () => {
    const [boolean, setBoolean] = useBoolean(false)
 
-   const { cart, setCart } = useContext(CartContext)
+   const { cart } = useContext(CartContext)
 
    const handleNav = () => setBoolean()
 
@@ -25,11 +25,15 @@ const Header1 = () => {
       <>
          {console.log(boolean)}
          <Flex id='shadow-header' />
-         <Header $menu={boolean} $cartNumber={cart.length}>
+         <Header $menu={boolean} $cartNumber={cart?.length}>
             <LogoTitle>
                <Li text='LinkFashion Store' />
             </LogoTitle>
-            <List arrayList={arrayListHeader} idName='container-li-clothes' />
+            <List
+               arrayList={arrayListHeader}
+               isDisabled={true}
+               idName='container-li-clothes'
+            />
             <List
                arrayList={arraySvgHeader}
                button={false}
@@ -37,8 +41,7 @@ const Header1 = () => {
                title={true}
                idName='container-icons'
             >
-               {console.log(cart)}
-               <p id='cart-number'>{cart.length}</p>
+               <div id='cart-number'>{cart.lengt == 0 ? null : cart.length}</div>
             </List>
             <Button id='menu-mobile' action={handleNav}>
                <img
@@ -89,7 +92,7 @@ const Header = styled.header`
       display: ${({ $cartNumber }) => ($cartNumber === 0 ? "none" : "block")};
    }
 
-   @media (max-width: 860px) {
+   @media (max-width: 926px) {
       gap: var(--jd-gap-s);
       flex-wrap: wrap;
       > [id="menu-mobile"] {
@@ -97,7 +100,6 @@ const Header = styled.header`
          position: absolute;
          right: 5%;
       }
-
       > [id="container-li-clothes"] {
          border-top: 4px solid var(--jd-bg-secundary);
          transform-origin: right;

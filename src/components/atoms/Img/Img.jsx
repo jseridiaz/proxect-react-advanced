@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
 
 const ImgHero = ({ img, alt, idName, children, className, idNameContainer }) => {
@@ -268,4 +268,4 @@ const ContainerImg = styled.div`
    }
 `
 
-export default ImgHero
+export default memo(ImgHero)

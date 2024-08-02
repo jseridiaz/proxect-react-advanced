@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-const Li = ({ text = null, children, to, id, className }) => {
+const Li = ({ text = null, children, to, id, className, disabled = false }) => {
    return (
-      <StyledLi id={id} className={className} to={to}>
+      <StyledLi id={id} className={className} to={disabled ? "/home" : to}>
          {text}
          {children}
       </StyledLi>
