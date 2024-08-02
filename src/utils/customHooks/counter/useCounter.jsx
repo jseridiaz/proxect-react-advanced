@@ -3,9 +3,10 @@ import { useCallback, useState } from "react"
 const useCounter = () => {
    const [counter, setCounter] = useState(1)
 
-   const sum = useCallback(() => {
+   const sum = () => {
       setCounter(counter + 1)
-   }, [counter])
+   }
+
    const res = useCallback(() => {
       counter >= 1 && setCounter(counter - 1)
    }, [counter])

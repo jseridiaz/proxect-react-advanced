@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styled from "styled-components"
 
 import Li from "../Li/Li"
@@ -11,6 +12,8 @@ const Button = ({
    goTo = false,
    action,
    title,
+   className,
+   $boolean,
 }) => (
    <>
       {goTo ? (
@@ -20,7 +23,9 @@ const Button = ({
          </Li>
       ) : (
          <StyledButton
+            className={className}
             title={title}
+            $boolean={$boolean}
             onClick={action}
             id={id}
             $primary={bgColor}
@@ -84,4 +89,4 @@ const StyledButton = styled.button`
       ba
    } */
 `
-export default Button
+export default memo(Button)

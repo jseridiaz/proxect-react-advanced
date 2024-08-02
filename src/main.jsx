@@ -7,13 +7,16 @@ import { BrowserRouter } from "react-router-dom"
 
 import App from "./App.jsx"
 import CartContextProvider from "./utils/useContext/useContextCart.jsx"
+import FavoriteContextProvider from "./utils/useContext/useContextFavourites.jsx"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <CartContextProvider>
-      <BrowserRouter basename='/'>
-         <HelmetProvider>
-            <App />
-         </HelmetProvider>
-      </BrowserRouter>
+      <FavoriteContextProvider>
+         <BrowserRouter basename='/'>
+            <HelmetProvider>
+               <App />
+            </HelmetProvider>
+         </BrowserRouter>
+      </FavoriteContextProvider>
    </CartContextProvider>,
 )

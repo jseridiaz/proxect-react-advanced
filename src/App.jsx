@@ -5,13 +5,11 @@ import styled from "styled-components"
 
 import FooterComponent from "./components/organisms/Footer/Footer"
 import Header1 from "./components/organisms/Header/Header"
-import Article from "./Pages/Article/Article"
 import Cart from "./Pages/Cart/Cart"
+import Favourites from "./Pages/Favourites/Favourites"
 import Home from "./Pages/Home/Home"
 import Login from "./Pages/Login/Login"
 import NotFounded from "./Pages/NotFounded/NotFounded"
-import Register from "./Pages/Register/Register"
-import Shop from "./Pages/Shop/Shop"
 
 const App = () => {
    return (
@@ -20,10 +18,8 @@ const App = () => {
          <Routes>
             <Route path='/' index element={<Home />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/shop' element={<Shop />} />
-            <Route path='/shop/:id' element={<Article />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/register' element={<Register />} />
+            <Route path='/favourites' element={<Favourites />} />
             <Route path='/login' element={<Login />} />
             <Route path='*' element={<NotFounded />} />
          </Routes>

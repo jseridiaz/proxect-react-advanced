@@ -14,10 +14,6 @@ import useReducerLogin, {
 
 const Login = () => {
    const [toggle, setToggle] = useBoolean(false)
-   // const [errorName, setErrorName] = useState("")
-   // const [errorSurname, setErrorSurname] = useState("")
-   // const [errorEmail, setErrorEmail] = useState("")
-   // const [errorPassword, setErrorPassword] = useState("")
 
    const [state, dispatch] = useReducer(useReducerLogin, INITIAL_STATE)
    const { errorName, errorSurname, errorEmail, errorPassword } = state

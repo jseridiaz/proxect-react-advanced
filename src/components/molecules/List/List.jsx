@@ -9,12 +9,12 @@ const List = ({
    textBtn = false,
    idName = null,
    array,
-   opened = false,
    title,
    children,
+   isDisabled,
 }) => {
    return (
-      <NavStyled id={idName} navMobile={opened}>
+      <NavStyled id={idName}>
          <Ul as='ul'>
             {arrayList.map((el, index) => (
                <li key={`${index}`} title={title && array[index].slice(1)}>
@@ -22,6 +22,7 @@ const List = ({
                      <Li
                         key={`${el || index}-li`}
                         to={array ? array[index] : "/shop"}
+                        disabled={isDisabled}
                      >
                         {el.svg || el}
                      </Li>
