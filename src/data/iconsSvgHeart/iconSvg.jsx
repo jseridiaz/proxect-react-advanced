@@ -1,6 +1,7 @@
-export const TypeHeart = ({ fillColor }) => {
+export const TypeHeart = ({ fillColor, classname }) => {
    return (
       <svg
+         className={classname}
          width='35px'
          height='35px'
          viewBox='-3.84 -3.84 31.68 31.68'

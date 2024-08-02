@@ -12,7 +12,11 @@ const SectionCategories = () => {
       <>
          <SectionFlex>
             <H2>Latest Arrivals By Categories</H2>
-            <List arrayList={arrayListCategories} idName='nav-categories' />
+            <List
+               arrayList={arrayListCategories}
+               isDisabled={true}
+               idName='nav-categories'
+            />
             <Slides array={arrayCards} />
          </SectionFlex>
       </>
@@ -54,6 +58,9 @@ const SectionFlex = styled.section`
                color: rgba(0, 0, 0, 0.756);
                font-weight: 600;
             }
+         }
+         .favourite-icon-card {
+            width: 200px;
          }
       }
    }
