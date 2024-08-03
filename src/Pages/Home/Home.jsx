@@ -4,20 +4,16 @@ import Button from "../../components/atoms/button/button"
 import H2 from "../../components/atoms/H2/H2"
 import ImgHero from "../../components/atoms/Img/Img"
 import Li from "../../components/atoms/Li/Li"
-import Toast from "../../components/molecules/Toast/Toast"
 import Hero from "../../components/organisms/Hero/Hero"
 import SectionCategories from "../../components/organisms/Home/SectionCategories/SectionCategories"
 import SectionCollection from "../../components/organisms/Home/SectionCollection/SectionCollection"
 import SectionFeatures from "../../components/organisms/Home/SectionFeatures/SectionFeatures"
 import { arrayPicturesHero } from "../../data/arrayPicturesHero/arrayPicturesHero"
-// import { CartContext } from "../../utils/useContext/useContextCart"
 
 const Home = () => {
-   // const { cart, setCart } = useContext(CartContext)
    return (
       <>
          <Hero>
-            <Toast />
             <div className='hero-container'>
                <p>Experience fashion like never before</p>
                <H2>

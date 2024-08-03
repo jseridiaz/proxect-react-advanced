@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useCallback, useContext } from "react"
 import styled from "styled-components"
 
 import Button from "../../components/atoms/button/button"
@@ -12,15 +12,31 @@ const Cart = () => {
    const { cart, setCart } = useContext(CartContext)
 
    const handleDelete = el => {
-      setCart(cart.filter(e => el.id != e.id))
+      setCart(cart.filter(item => item.id != el.id))
    }
+   const sumQuantity = useCallback(el => {
+      setCart(prevState =>
+         prevState.map(item =>
+            item.id == el.id ? { ...item, quantity: item.quantity + 1 } : item,
+         ),
+      )
+   }, [])
+   const resQuantity = useCallback(el => {
+      setCart(prevState =>
+         prevState.map(item =>
+            item.id == el.id && el.quantity > 1
+               ? { ...item, quantity: item.quantity - 1 }
+               : item,
+         ),
+      )
+   }, [])
    return (
       <ShopSection
          id='cart-section-page'
-         className={cart?.length > 0 && "width-reduced"}
+         className={cart.length > 0 && "width-reduced"}
       >
          <H2>My shopping cart</H2>
-         {cart?.length == 0 && (
+         {cart.length == 0 && (
             <ImgHero
                idNameContainer='empty-cart-container'
                img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722439506/Proyect%2012%20react/images/empty-Cart_zoztgh.webp'
@@ -29,10 +45,10 @@ const Cart = () => {
                <Parraf id='description-empty-cart'>Your cart ist empty</Parraf>
             </ImgHero>
          )}
-         {cart?.length > 0 && (
+         {cart.length > 0 && (
             <>
                <div id='articles-wrp'>
-                  {cart?.length > 0 &&
+                  {cart.length > 0 &&
                      cart.map(el => (
                         <DivCart $info={el.title} key={el.id}>
                            <ImgHero
@@ -53,6 +69,10 @@ const Cart = () => {
                                  X
                               </Button>
                               <div id='counter-container'>
+                                 <div>
+                                    <Button action={() => resQuantity(el)}>-</Button>
+                                    <Button action={() => sumQuantity(el)}>+</Button>
+                                 </div>
                                  <span>Quantity: {el.quantity}</span>
                               </div>
                            </div>
@@ -136,6 +156,9 @@ export const ShopSection = styled.section`
    [id="total"] {
       margin-top: var(--jd-margin-m);
       font-weight: 600;
+      padding: var(--jd-padding-s);
+      border-radius: var(--jd-br-s);
+      box-shadow: 0px 0px 4px 1px black;
       > span:last-child {
          margin-left: 10px;
       }
@@ -192,7 +215,7 @@ export const DivCart = styled.div`
          position: absolute;
          right: 0px;
          bottom: 0px;
-         width: 100px;
+         width: 200px;
          display: flex;
          justify-content: space-around;
          > span {

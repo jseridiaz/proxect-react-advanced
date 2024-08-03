@@ -30,10 +30,9 @@ const SectionFlex = styled.section`
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   background-color: var(--jd-bgcolor-primary);
    > h2 {
-      width: 100%;
-      padding: var(--jd-padding-xl) var(--jd-padding-l) var(--jd-padding-s)
-         var(--jd-padding-l);
+      border-radius: var(--jd-br-li);
    }
    > nav {
       padding: var(--jd-padding-xxl);
@@ -43,12 +42,14 @@ const SectionFlex = styled.section`
          width: 82.2%;
          justify-content: space-evenly;
          letter-spacing: 0.3px;
+         background-color: white;
+         border-radius: var(--jd-br-s);
          > li {
             padding: var(--jd-padding-xs) var(--jd-padding-s);
             transition: all 0.5s ease;
             border-radius: var(--jd-br-li);
             &:hover {
-               background-color: var(--jd-bg-card);
+               text-decoration: underline;
             }
             &:hover > a {
                color: black;

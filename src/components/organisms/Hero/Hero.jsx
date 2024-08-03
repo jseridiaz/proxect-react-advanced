@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
 const Hero = styled.section`
+   background-color: var(--jd-bgcolor-primary);
    overflow: hidden;
    display: flex;
    flex-direction: column;
    position: relative;
-   margin-top: 50px;
    width: 100%;
    max-width: 100svw;
    margin-inline: auto;
@@ -24,7 +24,9 @@ const Hero = styled.section`
       > p:first-child {
          user-select: none;
          margin-top: var(--jd-margin-m);
-         font-size: 16px;
+         font-size: 18px;
+         background-color: white;
+
          font-weight: 500;
          padding-inline: var(--jd-padding-xs);
       }
@@ -33,6 +35,8 @@ const Hero = styled.section`
          font-weight: bold;
          font-family: "Playfair Display", serif;
          padding-inline: var(--jd-padding-s);
+         width: 90%;
+         border-radius: var(--jd-br-li);
          -webkit-text-stroke: 0.2px;
          line-height: 60px;
       }
@@ -54,11 +58,11 @@ const Hero = styled.section`
       }
    }
    [id="effect-rounded"] {
-      background-color: white;
+      background-color: var(--jd-bgcolor-primary);
       border-radius: 50%;
       position: absolute;
       width: 182.0599%;
-      bottom: -65.1%;
+      bottom: -54.1%;
       height: 611.3px;
    }
    @media (width<1409px) {

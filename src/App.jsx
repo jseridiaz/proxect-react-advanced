@@ -34,25 +34,3 @@ export const DisplayFlex = styled.div`
    justify-content: center;
    align-items: center;
 `
-
-export const Flex = styled.div`
-   display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;
-   align-items: center;
-   &[id="shadow-header"] {
-      position: absolute;
-      z-index: 0;
-      top: 80px;
-      max-width: 100%;
-      width: 100%;
-      height: 110px;
-      background: rgb(217, 217, 217);
-      background: linear-gradient(
-         180deg,
-         rgba(217, 217, 217, 1) 0%,
-         rgba(255, 255, 255, 1) 90%
-      );
-      left: 0;
-   }
-`

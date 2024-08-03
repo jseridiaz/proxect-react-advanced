@@ -54,11 +54,12 @@ export default SectionCollection
 
 export const SectionGrid = styled.section`
    padding: calc(var(--jd-padding-xxl) * 2) calc(var(--jd-padding-xxl) * 2.1);
-   margin-top: var(--jd-margin-xxl);
+   /* margin-top: var(--jd-margin-xxl); */
    display: grid;
    justify-items: center;
    grid-template-columns: 0.8fr 0.8fr minmax(461px, 1fr);
    gap: calc(var(--jd-gap-m) + 5px);
+   background-color: var(--jd-bgcolor-primary);
    @media (max-width: 1254px) {
       padding: var(--jd-padding-m);
       grid-template-columns: 1fr 1fr;

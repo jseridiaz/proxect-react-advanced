@@ -34,12 +34,16 @@
    --jd-gap-xl: 30px;
    --jd-gap-xxl: 40px;
    /* bd color */
-   --jd-bgcolor-primary: white;
+   --jd-bgcolor-primary: #b1c7ff;
    --jd-bg-secundary: #d9d9d9;
+   --jd-bg-terciray: #ff8f8f;
+   --jd-bg-quaternary: #891414;
    --jd-bg-btn-navigate: #d9d9d9;
    --jd-bg-card: #ede0cc;
    --jd-card-card-offer: #254c22;
 
+   /* bg button */
+   --bg-btn-color-hover: rgb(250, 250, 250);
    /* border-radius */
    --jd-br-s: 4px;
    --jd-br-li: 14px;

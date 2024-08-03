@@ -1,9 +1,6 @@
-import changeObjectValue from "../changeObjectValue/changeObjectValue"
-
 const addToCart = (el, arrayToFind, setArray) => {
    if (arrayToFind.find(item => item.id == el.id)) {
-      const products = changeObjectValue(arrayToFind, el)
-      setArray(products)
+      return
    } else {
       setArray([...arrayToFind, el])
    }
