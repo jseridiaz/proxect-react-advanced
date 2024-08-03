@@ -88,11 +88,11 @@ const NavStyled = styled.nav`
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            transition: all 0.2s ease;
+            transition: all 0.7s ease;
             justify-content: center;
             align-items: center;
             &:hover {
-               background-color: var(--jd-bg-secundary);
+               background-color: var(--bg-btn-color-hover);
             }
          }
       }

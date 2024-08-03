@@ -15,7 +15,7 @@ import Toast from "../../molecules/Toast/Toast.jsx"
 const Slides = () => {
    const { cart, setCart } = useContext(CartContext)
    const { arrayToChange, setArrayToChange } = useContext(FavouriteContext)
-   const [boolean, changeBoolean] = useBoolean(false)
+   const [boolean] = useBoolean(false)
    // * esto es cambiar el estado del item de un objeto con react.
 
    return (
@@ -50,8 +50,8 @@ const Slides = () => {
                            price={el.price}
                            click={() => {
                               addToCart(el, cart, setCart)
-                              // changeBoolean(false)
                            }}
+                           element={el}
                         />
                      </ImgHero>
                   ))}
@@ -80,6 +80,7 @@ const Ul = styled.ul`
    .card-single {
       > img {
          object-fit: cover;
+         height: 76.4%;
       }
    }
    .icon-heart-card {

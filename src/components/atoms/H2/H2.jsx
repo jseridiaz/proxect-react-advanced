@@ -1,19 +1,22 @@
 import styled from "styled-components"
 
 const H2 = styled.h2`
-   font-size: 48px;
+   font-size: 53px;
    font-weight: bold;
-
+   width: 80%;
+   background-color: var(--jd-bg-terciray);
    font-family: "Playfair Display", serif;
    text-align: center;
-   padding-inline: var(--jd-padding-s);
+   padding: calc(var(--jd-padding-xxl) * 1.7);
    -webkit-text-stroke: 0.2px;
    line-height: 60px;
    &[id="title-section-colection"] {
-      width: 100%;
+      width: 80%;
       grid-column: 1/-1;
       grid-row: 1/2;
-      padding-bottom: calc(var(--jd-padding-xxl) * 3);
+      padding: calc(var(--jd-padding-xxl) * 1.7);
+      text-align: center;
+      border-radius: var(--jd-br-li);
    }
    @media (max-width: 1254px) {
       &[id="title-section-colection"] {

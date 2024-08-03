@@ -56,12 +56,16 @@ const SectionBlock = styled.section`
    justify-content: space-around;
    column-gap: var(--jd-gap-m);
    row-gap: var(--jd-gap-xxl);
+   background-color: var(--jd-bgcolor-primary);
    h2 {
-      width: 100%;
-      padding: var(--jd-padding-l) var(--jd-padding-l) var(--jd-padding-xxl);
+      border-radius: var(--jd-br-li);
    }
+
    .features-picture-container:not(:last-child) {
       width: 49%;
+   }
+   .features-picture-container:last-child {
+      background-color: var(--jd-bg-quaternary);
    }
    @media (width<1241px) {
       .features-picture-container:not(:last-child) {

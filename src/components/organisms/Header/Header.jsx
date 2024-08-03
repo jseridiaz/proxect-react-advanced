@@ -1,7 +1,6 @@
 import { useContext } from "react"
 import styled from "styled-components"
 
-import { Flex } from "../../../App"
 import {
    arrayListHeader,
    arraySvgHeader,
@@ -23,8 +22,6 @@ const Header1 = () => {
 
    return (
       <>
-         {console.log(boolean)}
-         <Flex id='shadow-header' />
          <Header $menu={boolean} $cartNumber={cart?.length}>
             <LogoTitle>
                <Li text='LinkFashion Store' />
@@ -66,7 +63,7 @@ const Header = styled.header`
    height: 99px;
    align-items: center;
    gap: 100px;
-   background-color: white;
+   background-color: var(--jd-bg-terciray);
    > [id="menu-mobile"] {
       width: 50px;
       height: 30px;

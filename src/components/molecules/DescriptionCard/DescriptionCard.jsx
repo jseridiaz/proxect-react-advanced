@@ -1,21 +1,27 @@
 import styled from "styled-components"
 
+import useBoolean from "../../../utils/customHooks/useBoolean/useBoolean"
 import Button from "../../atoms/button/button"
+import SvgCart, { SvgCartRemove } from "../../atoms/Svg/SvgCart"
 
 const DescriptionCard = ({ name, infoArticle, price, click }) => {
+   const [newBoolean, setnewBoolean] = useBoolean(true)
    return (
       <ContainerDescription>
+         {console.log(newBoolean)}
          <div>
             <h4>{name}</h4>
             <p>{infoArticle}</p>
             <p className='price'>{price}€</p>
          </div>
-
-         <Button title='Add to cart' action={click}>
-            <img
-               src='https://res.cloudinary.com/ddybbosdk/image/upload/v1721998538/Proyect%2012%20react/Resources/Shopping_bag_zxoiz1.webp'
-               alt='icon-take-in-cart'
-            />
+         <Button
+            title='Add to cart'
+            action={() => {
+               click()
+               setnewBoolean()
+            }}
+         >
+            {newBoolean ? <SvgCart /> : <SvgCartRemove />}
          </Button>
       </ContainerDescription>
    )
@@ -26,7 +32,7 @@ const ContainerDescription = styled.div`
    position: absolute;
    display: flex;
    bottom: 0;
-   background-color: var(--jd-bg-card);
+   background-color: aliceblue;
    width: 100%;
    height: 100px;
    justify-content: space-between;
@@ -44,7 +50,14 @@ const ContainerDescription = styled.div`
    }
    button {
       position: relative;
-      top: 15px;
+      top: 10px;
+      width: 45px;
+      height: 45px;
       align-content: center;
+
+      > svg {
+         width: 100%;
+         height: 100%;
+      }
    }
 `
