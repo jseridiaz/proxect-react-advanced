@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import styled from "styled-components"
 
 import { TypeHeart } from "../../../data/iconsSvgHeart/iconSvg"
@@ -10,18 +10,16 @@ import { FavouriteContext } from "../../../utils/useContext/useContextFavourites
 import Button from "../../atoms/button/button"
 import ImgHero from "../../atoms/Img/Img"
 import DescriptionCard from "../../molecules/DescriptionCard/DescriptionCard"
-import Toast from "../../molecules/Toast/Toast.jsx"
 
 const Slides = () => {
    const { cart, setCart } = useContext(CartContext)
    const { arrayToChange, setArrayToChange } = useContext(FavouriteContext)
-   const [boolean] = useBoolean(false)
-   // * esto es cambiar el estado del item de un objeto con react.
+   const [boolean, invertBoolean, setBoolean] = useBoolean()
+   const [elSelected, setElSelected] = useState("")
 
    return (
       <>
          <CarouselContainer>
-            {console.log(boolean)}
             <div>
                <Ul className='flex'>
                   {arrayToChange.map((el, i) => (
@@ -48,16 +46,18 @@ const Slides = () => {
                            name={el.title}
                            infoArticle={el.description}
                            price={el.price}
+                           callback={setBoolean}
                            click={() => {
                               addToCart(el, cart, setCart)
+                              setElSelected(el.title)
                            }}
-                           element={el}
+                           booleanState={boolean}
+                           selected={elSelected}
                         />
                      </ImgHero>
                   ))}
                </Ul>
             </div>
-            <Toast />
          </CarouselContainer>
       </>
    )

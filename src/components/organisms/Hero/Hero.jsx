@@ -55,20 +55,27 @@ const Hero = styled.section`
          color: #f6f6f6;
          font-weight: 500;
          letter-spacing: 1px;
+         background-color: var(--jd-btn-primary);
       }
    }
    [id="effect-rounded"] {
       background-color: var(--jd-bgcolor-primary);
       border-radius: 50%;
       position: absolute;
-      width: 182.0599%;
-      bottom: -54.1%;
+      width: 202.0599%;
+      bottom: -55.7%;
       height: 611.3px;
    }
-   @media (width<1409px) {
+   @media (width<1414px) {
       [id="effect-rounded"] {
-         width: 72.0599%;
-         bottom: -45%;
+         width: 69.4599%;
+         bottom: -40.1%;
+      }
+   }
+   @media (width<1297px) {
+      [id="effect-rounded"] {
+         width: 96.4599%;
+         bottom: -38.1%;
       }
    }
    @media (max-width: 1065px) {
@@ -83,14 +90,14 @@ const Hero = styled.section`
    }
    @media (max-width: 1023px) {
       [id="effect-rounded"] {
-         width: 280.0599%;
-         bottom: -41%;
+         width: 242.0599%;
+         bottom: -34%;
       }
    }
-   @media (max-width: 740px) {
+   @media (max-width: 739px) {
       [id="effect-rounded"] {
-         width: 192.0599%;
-         bottom: -24%;
+         width: 212.0599%;
+         bottom: -21%;
       }
    }
    @media (max-width: 666px) {
@@ -118,8 +125,8 @@ const Hero = styled.section`
          }
       }
       [id="effect-rounded"] {
-         width: 292.0599%;
-         bottom: -24%;
+         width: 260.0599%;
+         bottom: -23%;
       }
    }
 `

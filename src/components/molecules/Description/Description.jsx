@@ -19,9 +19,10 @@ const Description = ({ h3, p, btn, img, arrow, children, className, id }) => {
                      alt='icon-arrow-visit-shop'
                   />
                )}
+               {children}
             </Button>
          )}
-         {children}
+
          {img && <ImgHero />}
       </DivColumn>
    )

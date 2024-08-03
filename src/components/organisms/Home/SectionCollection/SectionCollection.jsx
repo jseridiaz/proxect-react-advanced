@@ -11,7 +11,7 @@ const SectionCollection = () => {
       <>
          <SectionGrid>
             <H2 id='title-section-colection'>
-               Explore Our Latest Collections For Y0u
+               Explore our Latest Collections for you
             </H2>
             {arraySectionCollection.map((el, index) => (
                <ImgHero
@@ -54,15 +54,26 @@ export default SectionCollection
 
 export const SectionGrid = styled.section`
    padding: calc(var(--jd-padding-xxl) * 2) calc(var(--jd-padding-xxl) * 2.1);
-   /* margin-top: var(--jd-margin-xxl); */
    display: grid;
    justify-items: center;
    grid-template-columns: 0.8fr 0.8fr minmax(461px, 1fr);
    gap: calc(var(--jd-gap-m) + 5px);
    background-color: var(--jd-bgcolor-primary);
+
+   [id="container-picture-1"] > div > a {
+      background-color: var(--jd-btn-primary);
+      border: 3px solid white;
+   }
    @media (max-width: 1254px) {
       padding: var(--jd-padding-m);
       grid-template-columns: 1fr 1fr;
+      [id="container-picture-1"] {
+         height: 600px;
+         img {
+            object-fit: cover;
+            object-position: 50% 5%;
+         }
+      }
    }
    @media (width<471px) {
       grid-template-rows: auto 400px auto auto auto;

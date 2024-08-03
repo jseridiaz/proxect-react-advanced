@@ -14,6 +14,7 @@ import NotFounded from "./Pages/NotFounded/NotFounded"
 const App = () => {
    return (
       <>
+         {console.log(scroll)}
          <Header1 />
          <Routes>
             <Route path='/' index element={<Home />} />
@@ -33,4 +34,9 @@ export const DisplayFlex = styled.div`
    display: flex;
    justify-content: center;
    align-items: center;
+
+   [id="toast-container"] {
+      position: fixed;
+      top: 0;
+   }
 `

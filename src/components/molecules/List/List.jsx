@@ -92,7 +92,7 @@ const NavStyled = styled.nav`
             justify-content: center;
             align-items: center;
             &:hover {
-               background-color: var(--bg-btn-color-hover);
+               background-color: var(--jd-bgcolor-primary);
             }
          }
       }

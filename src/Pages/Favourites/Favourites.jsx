@@ -27,10 +27,18 @@ const Favourites = () => {
       },
       [arrayToChange],
    )
+   const handleClick = el => {
+      cart.some(item => item.id == el.id)
+         ? setCart(cart.filter(item => el.id != item.id))
+         : addToCart(el, cart, setCart)
+   }
+   // const findInCart = (array, el) => {
+   //    array.some(item => item.id == el.id)
+   // }
 
    return (
       <SectionStyled>
-         <H2>My favourite list</H2>
+         <H2 id='title-favourites'>My favourite list</H2>
          <div id='favourites-article-container'>
             {filter.length == 0 ? (
                <div id='no-favourite-container'>
@@ -55,10 +63,12 @@ const Favourites = () => {
                         <Button
                            className='add-to-cart'
                            action={() => {
-                              addToCart(e, cart, setCart)
+                              handleClick(e)
                            }}
                         >
-                           Add to cart
+                           {cart.some(item => item.id == e.id)
+                              ? "Remove from cart"
+                              : "Add to cart"}
                         </Button>
                      </div>
                   </DivArticle>
@@ -77,7 +87,13 @@ const SectionStyled = styled(ShopSection)`
    justify-content: center;
    width: 80%;
    flex-wrap: wrap;
-   margin-top: 64px;
+   margin-inline: auto;
+
+   [id="title-favourites"] {
+      background-color: transparent;
+      border-bottom: none;
+      width: 46%;
+   }
    > div[id="favourites-article-container"] {
       display: flex;
       gap: var(--jd-gap-xl);

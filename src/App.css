@@ -1,7 +1,8 @@
 #root {
    max-width: 100%;
    width: 100%;
-   height: 80svh;
+   min-height: 80svh;
+   height: fit-content;
 }
 * {
    margin: 0;

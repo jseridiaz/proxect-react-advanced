@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import IconArrowCard from "../../../../data/iconArrowCard/IconArrowCard"
 import H2 from "../../../atoms/H2/H2"
 import ImgHero from "../../../atoms/Img/Img"
 import Description from "../../../molecules/Description/Description"
@@ -18,7 +19,9 @@ const SectionFeatures = () => {
                h3='Bottega veneta Women Exclusive Series'
                className='description-collection'
                btn='Shop now'
-            />
+            >
+               <IconArrowCard />
+            </Description>
          </ImgHero>
          <ImgHero
             className='features-picture-container'
@@ -29,7 +32,9 @@ const SectionFeatures = () => {
                h3='John Lewis : Any Day Ceollections'
                className='description-collection'
                btn='Shop now'
-            />
+            >
+               <IconArrowCard />
+            </Description>
          </ImgHero>
          <ImgHero
             className='features-picture-container'
@@ -37,10 +42,11 @@ const SectionFeatures = () => {
             alt='picture-with-special-50%-summer-offer'
          >
             <Description
+               id='offer-wrp-season'
                h3='Save 50% this Holiday season'
                p='It’s  time to revamp your fashion game without breaking the bank! Dive into our exclusive 50% off sale and discover unbearable deals on the most coveted styles.'
                className='description-collection'
-               btn='Shop now'
+               btn='Visit it here'
             />
          </ImgHero>
       </SectionBlock>
@@ -63,9 +69,32 @@ const SectionBlock = styled.section`
 
    .features-picture-container:not(:last-child) {
       width: 49%;
+      > div {
+         > a {
+            width: 40%;
+            height: 48px;
+            background-color: var(--jd-btn-primary);
+            border-radius: var(--jd-br-s);
+            outline: 3px solid white;
+            border: none;
+
+            > svg {
+               margin-left: var(--jd-margin-xs);
+            }
+         }
+      }
    }
    .features-picture-container:last-child {
       background-color: var(--jd-bg-quaternary);
+      > div {
+         > a {
+            width: 40%;
+            height: 48px;
+            background-color: var(--jd-btn-primary);
+            border-radius: var(--jd-br-s);
+            outline: 3px solid white;
+         }
+      }
    }
    @media (width<1241px) {
       .features-picture-container:not(:last-child) {
@@ -91,16 +120,29 @@ const SectionBlock = styled.section`
    @media (width<556px) {
       padding: var(--jd-padding-m);
       .features-picture-container:not(:last-child) {
+         > img {
+            object-position: 37%;
+         }
          > div {
             width: 100%;
             padding: var(--jd-padding-xs);
             > h3 {
                font-size: 29px;
             }
+
             a.link-button {
                width: 70%;
                height: 50px;
             }
+         }
+      }
+   }
+   .features-picture-container:last-child {
+      background-color: var(--jd-bg-quaternary);
+      > div {
+         > a {
+            width: 70%;
+            height: 58px;
          }
       }
    }

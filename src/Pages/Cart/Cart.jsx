@@ -22,6 +22,8 @@ const Cart = () => {
       )
    }, [])
    const resQuantity = useCallback(el => {
+      console.log("render")
+
       setCart(prevState =>
          prevState.map(item =>
             item.id == el.id && el.quantity > 1
@@ -79,13 +81,16 @@ const Cart = () => {
                         </DivCart>
                      ))}
                   <div id='total'>
-                     <span> Total:</span>
-                     <span>
-                        {cart
-                           .reduce((acc, el) => el.quantity * el.price + acc, 0)
-                           .toFixed(2)}
-                        €
-                     </span>
+                     <Button action={() => setCart([])}> Clear Cart</Button>
+                     <div>
+                        <span> Total:</span>
+                        <span>
+                           {cart
+                              .reduce((acc, el) => el.quantity * el.price + acc, 0)
+                              .toFixed(2)}
+                           €
+                        </span>
+                     </div>
                   </div>
                   <Button id='buy-btn'>Buy now</Button>
                </div>
@@ -99,16 +104,17 @@ export default Cart
 
 export const ShopSection = styled.section`
    min-height: 85svh;
-   margin: calc(var(--jd-margin-xl) * 2.5) auto;
    display: flex;
    flex-direction: column;
    padding: var(--jd-padding-s);
    width: 35%;
-
    align-items: center;
+   margin-inline: auto;
    gap: var(--jd-gap-m);
    > h2 {
-      margin-bottom: var(--jd-margin-l);
+      margin-bottom: var(--jd-margin-m);
+      padding: 20px;
+      background-color: transparent;
    }
    [id="articles-wrp"] {
       width: 100%;
@@ -154,13 +160,17 @@ export const ShopSection = styled.section`
       border-radius: var(--jd-br-li);
    }
    [id="total"] {
-      margin-top: var(--jd-margin-m);
       font-weight: 600;
       padding: var(--jd-padding-s);
-      border-radius: var(--jd-br-s);
-      box-shadow: 0px 0px 4px 1px black;
-      > span:last-child {
-         margin-left: 10px;
+      div:last-child {
+         margin-top: var(--jd-margin-m);
+         padding: var(--jd-padding-s);
+         border-radius: var(--jd-br-s);
+
+         box-shadow: 0px 0px 4px 1px black;
+         span:last-child {
+            margin-left: 10px;
+         }
       }
    }
    @media (width<405px) {
@@ -214,6 +224,7 @@ export const DivCart = styled.div`
       [id="counter-container"] {
          position: absolute;
          right: 0px;
+         align-items: center;
          bottom: 0px;
          width: 200px;
          display: flex;
@@ -251,7 +262,7 @@ export const DivCart = styled.div`
          }
       }
    }
-   @media (width<405px) {
+   @media (width<540px) {
       width: 90%;
       > .info-article-cart {
          width: 70%;
@@ -267,6 +278,22 @@ export const DivCart = styled.div`
          > button {
             top: 2px;
             right: 1px;
+         }
+      }
+   }
+   @media (width<395px) {
+      .info-article-cart {
+         [id="counter-container"] {
+            /* position: relative; */
+            /* left: 10px; */
+            justify-content: center;
+            gap: var(--jd-gap-xs);
+            padding-bottom: var(--jd-padding-xs);
+
+            > div {
+               width: 70px;
+               gap: 10px;
+            }
          }
       }
    }
