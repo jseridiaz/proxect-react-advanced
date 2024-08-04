@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async"
 import styled from "styled-components"
 
 import Button from "../../components/atoms/button/button"
@@ -8,11 +9,18 @@ import Hero from "../../components/organisms/Hero/Hero"
 import SectionCategories from "../../components/organisms/Home/SectionCategories/SectionCategories"
 import SectionCollection from "../../components/organisms/Home/SectionCollection/SectionCollection"
 import SectionFeatures from "../../components/organisms/Home/SectionFeatures/SectionFeatures"
+import Seo from "../../components/organisms/Seo/Seo"
 import { arrayPicturesHero } from "../../data/arrayPicturesHero/arrayPicturesHero"
 
 const Home = () => {
    return (
       <>
+         <Seo
+            title='Fashion Store - Clothes and complements'
+            description='Fashion Store shop is the new fashion store 
+          to find out all modern trendy clothes of the current and the next season.'
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
+         />
          <Hero>
             <div className='hero-container'>
                <p>Experience fashion like never before</p>

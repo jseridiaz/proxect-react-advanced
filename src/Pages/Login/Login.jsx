@@ -6,6 +6,7 @@ import H2 from "../../components/atoms/H2/H2"
 import Li from "../../components/atoms/Li/Li"
 import Parraf from "../../components/atoms/Parraf/Parraf"
 import InputForm from "../../components/organisms/InputForm/InputForm"
+import Seo from "../../components/organisms/Seo/Seo"
 import useBoolean from "../../utils/customHooks/useBoolean/useBoolean"
 import { regex } from "../../utils/functions/regex"
 import useReducerLogin, {
@@ -100,49 +101,60 @@ const Login = () => {
       setToggle(true)
    }
    return (
-      <Main id='main-login-register'>
-         <Form onSubmit={handleSubmit}>
-            <H2 id='title-form-register'>Sign up here</H2>
-            <Parraf>and get started in our Shop</Parraf>
-            <InputForm
-               idInput='name'
-               idName='Your Name'
-               reference={inputDataName}
-               error={errorName}
-               action={() => toggle && handleChange(inputDataName)}
-            />
-            <InputForm
-               idInput='surname'
-               idName='Your Surname'
-               reference={inputDataSurname}
-               error={errorSurname}
-               action={() => toggle && handleChange(inputDataSurname)}
-            />
-            <InputForm
-               idInput='email'
-               idName='Your e-mail'
-               reference={inputDataEmail}
-               error={errorEmail}
-               action={() => toggle && handleChange(inputDataEmail, "email")}
-            />
-            <InputForm
-               idInput='password'
-               idName='Password'
-               typeInput='password'
-               reference={inputDataPassword}
-               error={errorPassword}
-               action={() => toggle && handleChange(inputDataPassword, "password")}
-            />
-            <Button id='send-form' text='Log in' />
-            <Div>
-               <Parraf id='info-register-p'>{"Haven't you yet an Account?"}</Parraf>
-               <Parraf>
-                  Click <Li to='/login'> here</Li>
-               </Parraf>
-               <Parraf>to create it.</Parraf>
-            </Div>
-         </Form>
-      </Main>
+      <>
+         <Seo
+            title='Log in🔑 - Fashion Store'
+            description='Take a look to your favourite articles of Fashion Store online shop 👕❤️ '
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
+         />
+         <Main id='main-login-register'>
+            <Form onSubmit={handleSubmit}>
+               <H2 id='title-form-register'>Sign up here</H2>
+               <Parraf>and get started in our Shop</Parraf>
+               <InputForm
+                  idInput='name'
+                  idName='Your Name'
+                  reference={inputDataName}
+                  error={errorName}
+                  action={() => toggle && handleChange(inputDataName)}
+               />
+               <InputForm
+                  idInput='surname'
+                  idName='Your Surname'
+                  reference={inputDataSurname}
+                  error={errorSurname}
+                  action={() => toggle && handleChange(inputDataSurname)}
+               />
+               <InputForm
+                  idInput='email'
+                  idName='Your e-mail'
+                  reference={inputDataEmail}
+                  error={errorEmail}
+                  action={() => toggle && handleChange(inputDataEmail, "email")}
+               />
+               <InputForm
+                  idInput='password'
+                  idName='Password'
+                  typeInput='password'
+                  reference={inputDataPassword}
+                  error={errorPassword}
+                  action={() =>
+                     toggle && handleChange(inputDataPassword, "password")
+                  }
+               />
+               <Button id='send-form' text='Log in' />
+               <Div>
+                  <Parraf id='info-register-p'>
+                     {"Haven't you yet an Account?"}
+                  </Parraf>
+                  <Parraf>
+                     Click <Li to='/login'> here</Li>
+                  </Parraf>
+                  <Parraf>to create it.</Parraf>
+               </Div>
+            </Form>
+         </Main>
+      </>
    )
 }
 

@@ -6,6 +6,7 @@ import H2 from "../../components/atoms/H2/H2"
 import H3 from "../../components/atoms/H3/H3"
 import ImgHero from "../../components/atoms/Img/Img"
 import Parraf from "../../components/atoms/Parraf/Parraf"
+import Seo from "../../components/organisms/Seo/Seo"
 import { TypeHeart } from "../../data/iconsSvgHeart/iconSvg"
 import useFilter from "../../utils/customHooks/useFilter/useFilter"
 import addToCart from "../../utils/functions/addToCart/addToCart"
@@ -37,45 +38,52 @@ const Favourites = () => {
    // }
 
    return (
-      <SectionStyled>
-         <H2 id='title-favourites'>My favourite list</H2>
-         <div id='favourites-article-container'>
-            {filter.length == 0 ? (
-               <div id='no-favourite-container'>
-                  <p>❤️ Add favourite articles to your List ❤️</p>
-               </div>
-            ) : (
-               filter.map(e => (
-                  <DivArticle key={e.id}>
-                     <ImgHero img={e.img} alt={e.alt}></ImgHero>
-                     <div className='info-article-cart'>
-                        <H3>{e.title}</H3>
-                        <Parraf id='description-appareal'>{e.description}</Parraf>
-                        <Parraf>{e.price}€</Parraf>
-                        <Button
-                           className='icon-heart-card'
-                           action={() => {
-                              removeFavourites(e)
-                           }}
-                        >
-                           <TypeHeart fillColor='red' />
-                        </Button>
-                        <Button
-                           className='add-to-cart'
-                           action={() => {
-                              handleClick(e)
-                           }}
-                        >
-                           {cart.some(item => item.id == e.id)
-                              ? "Remove from cart"
-                              : "Add to cart"}
-                        </Button>
-                     </div>
-                  </DivArticle>
-               ))
-            )}
-         </div>
-      </SectionStyled>
+      <>
+         <Seo
+            title='Favourite list❤️ - Fashion Store'
+            description='Take a look to your favourite articles of Fashion Store online shop 👕❤️ '
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
+         />
+         <SectionStyled>
+            <H2 id='title-favourites'>My favourite list</H2>
+            <div id='favourites-article-container'>
+               {filter.length == 0 ? (
+                  <div id='no-favourite-container'>
+                     <p>❤️ Add favourite articles to your List ❤️</p>
+                  </div>
+               ) : (
+                  filter.map(e => (
+                     <DivArticle key={e.id}>
+                        <ImgHero img={e.img} alt={e.alt}></ImgHero>
+                        <div className='info-article-cart'>
+                           <H3>{e.title}</H3>
+                           <Parraf id='description-appareal'>{e.description}</Parraf>
+                           <Parraf>{e.price}€</Parraf>
+                           <Button
+                              className='icon-heart-card'
+                              action={() => {
+                                 removeFavourites(e)
+                              }}
+                           >
+                              <TypeHeart fillColor='red' />
+                           </Button>
+                           <Button
+                              className='add-to-cart'
+                              action={() => {
+                                 handleClick(e)
+                              }}
+                           >
+                              {cart.some(item => item.id == e.id)
+                                 ? "Remove from cart"
+                                 : "Add to cart"}
+                           </Button>
+                        </div>
+                     </DivArticle>
+                  ))
+               )}
+            </div>
+         </SectionStyled>
+      </>
    )
 }
 

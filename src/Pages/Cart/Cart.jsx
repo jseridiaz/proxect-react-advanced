@@ -1,4 +1,5 @@
 import { useCallback, useContext } from "react"
+import { Helmet } from "react-helmet-async"
 import styled from "styled-components"
 
 import Button from "../../components/atoms/button/button"
@@ -6,6 +7,7 @@ import H2 from "../../components/atoms/H2/H2"
 import H3 from "../../components/atoms/H3/H3"
 import ImgHero from "../../components/atoms/Img/Img"
 import Parraf from "../../components/atoms/Parraf/Parraf"
+import Seo from "../../components/organisms/Seo/Seo"
 import { CartContext } from "../../utils/useContext/useContextCart"
 
 const Cart = () => {
@@ -34,6 +36,12 @@ const Cart = () => {
    }, [])
    return (
       <>
+         <Seo
+            title={"Shopping cart🛍️- Fashion Store"}
+            description='Handle your shopping cart and buy your articles'
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
+         />
+
          <H2 id='title-cart-section'>My shopping cart</H2>
          <ShopSection
             id='cart-section-page'
