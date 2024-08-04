@@ -16,6 +16,9 @@ export const StyledLi = styled(Link)`
    width: fit-content;
    height: fit-content;
    font-size: 20px;
+   &[href="/cart"] {
+      position: relative;
+   }
    &[id="logo-title-a"] {
       order: 0;
       position: relative;
@@ -34,7 +37,6 @@ export const StyledLi = styled(Link)`
       border: 1px solid white;
       justify-content: center;
       align-items: center;
-      border-radius: 54px;
       > div {
          width: 41.33px;
          height: 30.32px;

@@ -37,9 +37,7 @@ const Header1 = () => {
                array={arrayLinksheader}
                title={true}
                idName='container-icons'
-            >
-               <div id='cart-number'>{cart.lengt == 0 ? null : cart.length}</div>
-            </List>
+            ></List>
             <Button id='menu-mobile' action={handleNav}>
                <img
                   src='https://res.cloudinary.com/ddybbosdk/image/upload/v1719609521/menu-burger_zieiqy.png'
@@ -84,8 +82,8 @@ const Header = styled.header`
       color: white;
       position: absolute;
       font-size: 14px;
-      right: 0px;
-      top: -10px;
+      right: -6px;
+      top: -14px;
       display: ${({ $cartNumber }) => ($cartNumber === 0 ? "none" : "block")};
    }
 
@@ -128,6 +126,8 @@ const Header = styled.header`
          > ul {
             justify-content: center;
          }
+      }
+      [id="cart-number"] {
       }
    }
    @media (max-width: 452px) {

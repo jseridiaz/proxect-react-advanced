@@ -19,6 +19,6 @@ export const arraySvgHeader = [
    { svg: TypeHeart("#ffffff"), alt: "heart" },
    {
       svg: IconSvgCart(),
-      alt: "shoping-cart",
+      alt: "shopping-cart",
    },
 ]
