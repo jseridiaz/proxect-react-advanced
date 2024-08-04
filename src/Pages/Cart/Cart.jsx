@@ -178,6 +178,9 @@ export const ShopSection = styled.section`
          }
       }
    }
+   @media (width<531px) {
+      width: 100%;
+   }
    @media (width<405px) {
       [id="buy-btn"] {
          width: 70%;
@@ -271,6 +274,7 @@ export const DivCart = styled.div`
       width: 90%;
       > .info-article-cart {
          width: 70%;
+
          > h3 {
             font-size: 15px;
             text-align: center;
@@ -284,6 +288,7 @@ export const DivCart = styled.div`
                font-size: 15px;
             }
          }
+
          > button {
             top: 2px;
             right: 1px;
