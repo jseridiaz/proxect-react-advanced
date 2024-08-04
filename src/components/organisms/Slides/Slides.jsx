@@ -45,7 +45,7 @@ const Slides = () => {
                            key={i}
                            name={el.title}
                            infoArticle={el.description}
-                           price={el.price}
+                           price={el.price.toString().replace(".", "'")}
                            callback={setBoolean}
                            click={() => {
                               addToCart(el, cart, setCart)

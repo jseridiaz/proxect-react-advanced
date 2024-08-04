@@ -55,6 +55,7 @@ const ContainerImg = styled.div`
       height: 100%;
       a {
          margin-top: var(--jd-margin-l);
+         border-radius: calc(var(--jd-br-s) * 2);
       }
    }
    &[id="container-picture-2"] {
@@ -143,6 +144,9 @@ const ContainerImg = styled.div`
       &[id="container-picture-1"] {
          grid-column: 1/-1;
          grid-row: 3/4;
+         a {
+            border-radius: calc(var(--jd-br-s) * 2);
+         }
       }
       &[id="container-picture-2"] {
          grid-column: 1/2;

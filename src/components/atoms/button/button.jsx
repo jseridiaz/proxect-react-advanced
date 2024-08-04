@@ -54,7 +54,7 @@ const StyledButton = styled.button`
       display: flex;
       justify-content: center;
       width: 232px;
-      border-radius: 50px;
+      border-radius: calc(var(--jd-br-s) * 2);
       height: 63px;
       text-align: center;
       align-items: center;

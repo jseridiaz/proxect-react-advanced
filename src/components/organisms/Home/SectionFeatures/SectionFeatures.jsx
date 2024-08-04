@@ -38,7 +38,7 @@ const SectionFeatures = () => {
          </ImgHero>
          <ImgHero
             className='features-picture-container'
-            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722030840/Proyect%2012%20react/images/yjol4wv4mzyiayksvpir.webp'
+            img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722760776/Proyect%2012%20react/images/model-nike_1_zyxzfv.avif'
             alt='picture-with-special-50%-summer-offer'
          >
             <Description
@@ -85,7 +85,13 @@ const SectionBlock = styled.section`
       }
    }
    .features-picture-container:last-child {
+      overflow: hidden;
       background-color: var(--jd-bg-quaternary);
+      > img {
+         object-fit: cover;
+         object-position: 50% 30%;
+         width: 37%;
+      }
       > div {
          > a {
             width: 40%;
@@ -101,10 +107,24 @@ const SectionBlock = styled.section`
          width: 100%;
       }
    }
+   @media (width<884px) {
+      .features-picture-container:last-child {
+         > img {
+            width: 34%;
+         }
+      }
+   }
    @media (width<844px) {
       .features-picture-container:not(:last-child) {
          > div {
             width: 90%;
+         }
+      }
+      .features-picture-container:last-child {
+         > img {
+            object-fit: cover;
+            object-position: 50% 27%;
+            width: 100%;
          }
       }
    }
@@ -138,8 +158,13 @@ const SectionBlock = styled.section`
       }
    }
    .features-picture-container:last-child {
-      background-color: var(--jd-bg-quaternary);
+      background-color: aliceblue;
+      border: 1px solid black;
       > div {
+         h3,
+         p {
+            color: black;
+         }
          > a {
             width: 70%;
             height: 58px;
