@@ -170,11 +170,10 @@ const Form = styled.form`
    flex-direction: column;
    border: 1px solid black;
    width: 60%;
-   min-height: 135svh;
-   padding: var(--jd-padding-s);
+   /* min-height: 135svh; */
+   padding: var(--jd-padding-xxl) var(--jd-padding-s);
    margin: 0px auto;
    gap: var(--jd-gap-s);
-   justify-content: center;
    align-items: center;
    background-color: aliceblue;
    border-radius: var(--jd-br-card);

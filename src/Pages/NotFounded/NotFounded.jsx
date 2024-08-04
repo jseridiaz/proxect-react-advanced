@@ -16,9 +16,11 @@ const NotFounded = () => {
                alt='picture-describing-error404-not-founded'
                loading='lazy'
             />
-            <H2>Page Not Founded</H2>
+            <H2 id='title-not-founded-page'>Page Not Founded</H2>
             <Parraf>Error 404 </Parraf>
-            <Button goTo='/home'>Go Home</Button>
+            <Button id='go-home-btn' goTo='/home'>
+               Go Home
+            </Button>
          </NotFoundedContainer>
       </>
    )
@@ -44,9 +46,11 @@ const NotFoundedContainer = styled(ShopSection)`
       position: relative;
       left: 20%;
    }
-   > h2 {
+   > [id="title-not-founded-page"] {
+      background-color: transparent;
       font-size: 60px;
       color: grey;
+      width: 50%;
    }
    > p {
       font-size: 30px;
@@ -54,7 +58,56 @@ const NotFoundedContainer = styled(ShopSection)`
       text-decoration: underline;
    }
    > a {
-      background-color: black;
+      padding: var(--jd-padding-s);
+      font-weight: 600;
+      border-radius: var(--jd-br-s);
+      background-color: var(--jd-btn-primary);
       margin-top: var(--jd-margin-xxl);
+   }
+   @media (width<960px) {
+      > [id="picture-404-1"] {
+         width: 80%;
+         left: 50%;
+         height: 100%;
+         transform: translate(-50%);
+      }
+      h2 {
+         margin-bottom: calc(var(--jd-margin-xxl) * 1.4);
+         padding-inline: var(--jd-padding-s);
+      }
+      > *:not([id="picture-404-1"]) {
+         left: 0px;
+         width: 90%;
+      }
+      > p {
+         display: none;
+      }
+      > a#go-home-btn {
+         width: 40%;
+      }
+   }
+   @media (width<516px) {
+      > [id="picture-404-1"] {
+         object-fit: cover;
+         height: 80%;
+         width: 100%;
+         top: 21%;
+      }
+      > h2[id="title-not-founded-page"] {
+         position: absolute;
+         top: 14%;
+         width: 100%;
+         font-size: 39px;
+      }
+      > a[id="go-home-btn"] {
+         position: absolute;
+         bottom: 0%;
+         left: 50%;
+         transform: translate(-50%);
+         padding: var(--jd-padding-s);
+         font-weight: 600;
+         border-radius: var(--jd-br-s);
+         background-color: var(--jd-btn-primary);
+      }
    }
 `

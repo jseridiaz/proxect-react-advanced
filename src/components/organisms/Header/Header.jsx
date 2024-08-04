@@ -96,22 +96,23 @@ const Header = styled.header`
          right: 2%;
       }
       > [id="container-li-clothes"] {
-         border-top: 4px solid var(--jd-bg-secundary);
+         border-top: 4px solid var(--jd-bgcolor-primary);
          transform-origin: right;
          position: absolute;
          min-width: 0px;
          width: 50%;
          transform: ${({ $menu }) => ($menu ? "scaleX(1)" : "scalex(0)")};
          align-items: center;
-         margin-top: 700px;
+         margin-top: 794px;
          padding: var(--jd-padding-m);
-         background-color: var(--jd-bg-secundary);
+         background-color: var(--jd-bgcolor-primary);
          right: 0px;
          height: 100svh;
          transition: all 0.3s ease;
          > ul {
             height: 100%;
             align-items: space-around;
+            flex-direction: column;
          }
       }
       > [id="container-icons"] {
@@ -121,6 +122,10 @@ const Header = styled.header`
    @media (width<516px) {
       height: 130px;
       gap: 0px;
+      > [id="container-li-clothes"] {
+         width: 100%;
+         margin-top: 827px;
+      }
       > [id="container-icons"] {
          width: 100%;
          > ul {
