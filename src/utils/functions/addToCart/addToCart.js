@@ -5,4 +5,5 @@ const addToCart = (el, arrayToFind, setArray) => {
       setArray([...arrayToFind, el])
    }
 }
+
 export default addToCart

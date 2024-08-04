@@ -1,5 +1,7 @@
+import { useContext } from "react"
 import styled from "styled-components"
 
+import { CartContext } from "../../../utils/useContext/useContextCart"
 import Button from "../../atoms/button/button"
 import Li from "../../atoms/Li/Li"
 
@@ -13,6 +15,7 @@ const List = ({
    children,
    isDisabled,
 }) => {
+   const { cart } = useContext(CartContext)
    return (
       <NavStyled id={idName}>
          <Ul as='ul'>
@@ -25,6 +28,11 @@ const List = ({
                         disabled={isDisabled}
                      >
                         {el.svg || el}
+                        {el.alt == "shopping-cart" ? (
+                           <div id='cart-number'>
+                              {cart.lengt == 0 ? null : cart.length}
+                           </div>
+                        ) : null}
                      </Li>
                   ) : (
                      <Button key={textBtn ? el + index : el.alt}>
@@ -92,7 +100,7 @@ const NavStyled = styled.nav`
             justify-content: center;
             align-items: center;
             &:hover {
-               background-color: var(--bg-btn-color-hover);
+               background-color: var(--jd-bgcolor-primary);
             }
          }
       }

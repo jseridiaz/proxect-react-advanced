@@ -37,9 +37,7 @@ const Header1 = () => {
                array={arrayLinksheader}
                title={true}
                idName='container-icons'
-            >
-               <div id='cart-number'>{cart.lengt == 0 ? null : cart.length}</div>
-            </List>
+            ></List>
             <Button id='menu-mobile' action={handleNav}>
                <img
                   src='https://res.cloudinary.com/ddybbosdk/image/upload/v1719609521/menu-burger_zieiqy.png'
@@ -84,40 +82,57 @@ const Header = styled.header`
       color: white;
       position: absolute;
       font-size: 14px;
-      right: 0px;
-      top: -10px;
+      right: -6px;
+      top: -14px;
       display: ${({ $cartNumber }) => ($cartNumber === 0 ? "none" : "block")};
    }
 
    @media (max-width: 926px) {
-      gap: var(--jd-gap-s);
+      gap: var(--jd-gap-l);
       flex-wrap: wrap;
       > [id="menu-mobile"] {
          display: flex;
          position: absolute;
-         right: 5%;
+         right: 2%;
       }
       > [id="container-li-clothes"] {
-         border-top: 4px solid var(--jd-bg-secundary);
+         border-top: 4px solid var(--jd-bgcolor-primary);
          transform-origin: right;
          position: absolute;
          min-width: 0px;
          width: 50%;
          transform: ${({ $menu }) => ($menu ? "scaleX(1)" : "scalex(0)")};
          align-items: center;
-         margin-top: 700px;
+         margin-top: 794px;
          padding: var(--jd-padding-m);
-         background-color: var(--jd-bg-secundary);
+         background-color: var(--jd-bgcolor-primary);
          right: 0px;
          height: 100svh;
          transition: all 0.3s ease;
          > ul {
             height: 100%;
             align-items: space-around;
+            flex-direction: column;
          }
       }
       > [id="container-icons"] {
          margin-right: 15%;
+      }
+   }
+   @media (width<516px) {
+      height: 130px;
+      gap: 0px;
+      > [id="container-li-clothes"] {
+         width: 100%;
+         margin-top: 827px;
+      }
+      > [id="container-icons"] {
+         width: 100%;
+         > ul {
+            justify-content: center;
+         }
+      }
+      [id="cart-number"] {
       }
    }
    @media (max-width: 452px) {

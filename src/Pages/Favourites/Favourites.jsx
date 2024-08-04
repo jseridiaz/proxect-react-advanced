@@ -27,10 +27,18 @@ const Favourites = () => {
       },
       [arrayToChange],
    )
+   const handleClick = el => {
+      cart.some(item => item.id == el.id)
+         ? setCart(cart.filter(item => el.id != item.id))
+         : addToCart(el, cart, setCart)
+   }
+   // const findInCart = (array, el) => {
+   //    array.some(item => item.id == el.id)
+   // }
 
    return (
       <SectionStyled>
-         <H2>My favourite list</H2>
+         <H2 id='title-favourites'>My favourite list</H2>
          <div id='favourites-article-container'>
             {filter.length == 0 ? (
                <div id='no-favourite-container'>
@@ -55,10 +63,12 @@ const Favourites = () => {
                         <Button
                            className='add-to-cart'
                            action={() => {
-                              addToCart(e, cart, setCart)
+                              handleClick(e)
                            }}
                         >
-                           Add to cart
+                           {cart.some(item => item.id == e.id)
+                              ? "Remove from cart"
+                              : "Add to cart"}
                         </Button>
                      </div>
                   </DivArticle>
@@ -77,7 +87,14 @@ const SectionStyled = styled(ShopSection)`
    justify-content: center;
    width: 80%;
    flex-wrap: wrap;
-   margin-top: 64px;
+   margin-inline: auto;
+
+   [id="title-favourites"] {
+      background-color: transparent;
+      border-bottom: none;
+      width: 100%;
+      font-size: 42px;
+   }
    > div[id="favourites-article-container"] {
       display: flex;
       gap: var(--jd-gap-xl);
@@ -125,11 +142,19 @@ const SectionStyled = styled(ShopSection)`
          justify-content: center;
       }
    }
+   @media (width<590px) {
+      [id="title-favourites"] {
+         padding: var(--jd-padding-xs);
+         margin-top: var(--jd-margin-l);
+      }
+   }
    @media (width<405px) {
+      width: 95%;
       > div[id="favourites-article-container"] {
          justify-content: center;
       }
       .info-article-cart {
+         width: 64.9%;
          > h3 {
             font-size: 20px;
          }
@@ -171,5 +196,11 @@ const DivArticle = styled(DivCart)`
    @media (width<405px) {
       width: 90%;
       min-width: 290px;
+      > div {
+         padding: var(--jd-padding-xs);
+      }
+   }
+   @media (width<369px) {
+      height: 280px;
    }
 `

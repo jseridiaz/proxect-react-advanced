@@ -22,45 +22,59 @@ const Login = () => {
    const inputDataEmail = useRef()
    const inputDataPassword = useRef()
 
-   const setAddError = useCallback((errorType, payloadValue) =>
-      dispatch({ type: errorType, payload: payloadValue }),
+   const setAddError = useCallback(
+      (errorType, payloadValue) =>
+         dispatch({ type: errorType, payload: payloadValue }),
+      [],
    )
-   const handleChange = (input, typeInput = "text") => {
-      const { value } = input.current
-      if (typeInput == "text") {
-         if (value.length > 0) {
-            input == inputDataName
-               ? setAddError("ADD_ERROR_NAME", "clear")
-               : setAddError("ADD_ERROR_SURNAME", "clear")
-         } else {
-            input == inputDataName
-               ? setAddError("ADD_ERROR_NAME")
-               : setAddError("ADD_ERROR_SURNAME")
-         }
-      }
+   // const setErrorName = useCallback(
+   //    payloadValue => {
+   //       dispatch({ type: "ADD_ERROR_NAME", payload: payloadValue })
+   //    },
+   //    [inputDataName],
+   // )
 
-      if (typeInput == "email") {
-         if (
-            value.length > 0 &&
-            value.includes("@") &&
-            value.lastIndexOf(".") > value.indexOf("@") &&
-            value.lastIndexOf(".") !== value.length - 1
-         ) {
-            setAddError("ADD_ERROR_EMAIL", "clear")
-         } else {
-            setAddError("ADD_ERROR_EMAIL")
+   const handleChange = useCallback(
+      (input, typeInput = "text") => {
+         const { value } = input.current
+         if (typeInput == "text") {
+            if (value.length > 0) {
+               input == inputDataName
+                  ? setAddError("ADD_ERROR_NAME", "clear")
+                  : setAddError("ADD_ERROR_SURNAME", "clear")
+            } else {
+               input == inputDataName
+                  ? setAddError("ADD_ERROR_NAME")
+                  : setAddError("ADD_ERROR_SURNAME")
+            }
          }
-      }
 
-      if (typeInput == "password") {
-         if (regex.test(value)) {
-            setAddError("ADD_ERROR_PASSWORD", "clear")
-         } else {
-            setAddError("ADD_ERROR_PASSWORD")
+         if (typeInput == "email") {
+            if (
+               value.length > 0 &&
+               value.includes("@") &&
+               value.lastIndexOf(".") > value.indexOf("@") &&
+               value.lastIndexOf(".") !== value.length - 1
+            ) {
+               setAddError("ADD_ERROR_EMAIL", "clear")
+            } else {
+               setAddError("ADD_ERROR_EMAIL")
+            }
          }
-      }
-   }
+
+         if (typeInput == "password") {
+            if (regex.test(value)) {
+               setAddError("ADD_ERROR_PASSWORD", "clear")
+            } else {
+               setAddError("ADD_ERROR_PASSWORD")
+            }
+         }
+      },
+      [inputDataName],
+   )
    const handleSubmit = e => {
+      console.log(inputDataName.current)
+
       e.preventDefault()
       if (inputDataName.current.value.length == 0) {
          setAddError("ADD_ERROR_NAME")
@@ -121,9 +135,9 @@ const Login = () => {
             />
             <Button id='send-form' text='Log in' />
             <Div>
-               <Parraf id='info-register-p'>Haven't you yet an Account?</Parraf>
+               <Parraf id='info-register-p'>{"Haven't you yet an Account?"}</Parraf>
                <Parraf>
-                  Click <Li to='/register'> here</Li>
+                  Click <Li to='/login'> here</Li>
                </Parraf>
                <Parraf>to create it.</Parraf>
             </Div>
@@ -156,11 +170,10 @@ const Form = styled.form`
    flex-direction: column;
    border: 1px solid black;
    width: 60%;
-   min-height: 135svh;
+   /* min-height: 135svh; */
    padding: var(--jd-padding-xxl) var(--jd-padding-s);
    margin: 0px auto;
    gap: var(--jd-gap-s);
-   justify-content: center;
    align-items: center;
    background-color: aliceblue;
    border-radius: var(--jd-br-card);
@@ -168,15 +181,19 @@ const Form = styled.form`
    > h2 {
       font-size: 40px;
       width: 80%;
-      padding-inline: var(--jd-padding-m);
+      padding: var(--jd-padding-m);
       margin-bottom: var(--jd-margin-l);
+      background-color: transparent;
+      border-bottom: 1px solid black;
    }
+
    > p {
       color: black;
       position: relative;
       bottom: 15px;
       text-align: center;
-      font-weight: 500;
+      font-weight: 600;
+      padding-bottom: var(--jd-margin-s);
    }
    > button {
       outline: 1px solid black;

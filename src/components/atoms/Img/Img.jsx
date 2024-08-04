@@ -55,6 +55,7 @@ const ContainerImg = styled.div`
       height: 100%;
       a {
          margin-top: var(--jd-margin-l);
+         border-radius: calc(var(--jd-br-s) * 2);
       }
    }
    &[id="container-picture-2"] {
@@ -78,17 +79,17 @@ const ContainerImg = styled.div`
       border-radius: var(--jd-br-card);
       > img {
          object-position: 50% 0%;
-         object-fit: contain;
+         object-fit: cover;
          width: 100%;
-         height: 100%;
+         height: 76.6%;
       }
    }
-   &.card-single:last-child {
+   /* &.card-single:last-child {
       > img {
          object-fit: fill;
          border-radius: var(--jd-br-l);
       }
-   }
+   } */
    &.features-picture-container:not(:last-child) {
       width: 49%;
       position: relative;
@@ -143,6 +144,9 @@ const ContainerImg = styled.div`
       &[id="container-picture-1"] {
          grid-column: 1/-1;
          grid-row: 3/4;
+         a {
+            border-radius: calc(var(--jd-br-s) * 2);
+         }
       }
       &[id="container-picture-2"] {
          grid-column: 1/2;

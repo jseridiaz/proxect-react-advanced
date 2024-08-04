@@ -1,11 +1,11 @@
 import { useState } from "react"
 
-const useBoolean = (initialValue, valueToChange) => {
+const useBoolean = initialValue => {
    const [useBoolean, setBoolean] = useState(initialValue)
 
-   const changeBoolean = () => setBoolean(valueToChange || !useBoolean)
+   const changeBoolean = valueTochange => setBoolean(valueTochange || !useBoolean)
 
-   return [useBoolean, changeBoolean]
+   return [useBoolean, changeBoolean, setBoolean]
 }
 
 export default useBoolean

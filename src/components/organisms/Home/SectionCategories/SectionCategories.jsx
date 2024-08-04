@@ -75,6 +75,17 @@ const SectionFlex = styled.section`
          padding: 5px;
       }
    }
+   @media (max-width: 611px) {
+      padding: var(--jd-padding-xxl) var(--jd-padding-s);
+      > h2 {
+         padding: var(--jd-padding-l);
+         width: 100%;
+         margin-bottom: var(--jd-margin-xl);
+      }
+      > nav {
+         margin-bottom: var(--jd-margin-xl);
+      }
+   }
    @media (width<361px) {
       > h2 {
          font-size: 30px;

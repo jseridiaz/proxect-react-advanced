@@ -12,7 +12,7 @@ export const arraySectionCollection = [
       h3: "Sheer Bomber Jacket",
       parraf:
          "Introducing our stylish and versatile sheer clergy caped bomber jacket",
-      btn: "shop now",
+      btn: "Shop now",
       btnImg:
          "https://res.cloudinary.com/ddybbosdk/image/upload/v1721973582/Proyect%2012%20react/images/Vector_ixjxhk.png",
    },

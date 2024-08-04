@@ -4,57 +4,37 @@ import styled from "styled-components"
 import Button from "../../atoms/button/button"
 import Parraf from "../../atoms/Parraf/Parraf"
 
-const Toast = () => {
+const Toast = ({ nameItem, onClose }) => {
    return (
       <ToastContainer id='toast-container'>
          <div className='info-toast-container'>
             <svg
                xmlns='http://www.w3.org/2000/svg'
-               width='21'
-               height='21'
+               width='35'
+               height='35'
                fill='none'
+               viewBox='0 0 24 24'
             >
-               <g filter='url(#a)'>
+               <rect
+                  width='24'
+                  height='24'
+                  fill='#fff'
+                  strokeWidth='0'
+                  rx='12'
+                  transform='matrix(.74 0 0 .74 3.12 3.12)'
+               />
+               <g stroke='#55b938' strokeWidth='2.064'>
+                  <circle cx='12' cy='12' r='10' />
                   <path
-                     fill='#fff'
-                     d='M19.799 10.111c0 5.35-4.337 9.688-9.688 9.688-5.35 0-9.687-4.338-9.687-9.688C.424 4.761 4.76.424 10.11.424S19.8 4.76 19.8 10.11ZM8.99 15.241l7.187-7.188a.625.625 0 0 0 0-.884l-.884-.884a.625.625 0 0 0-.883 0l-5.862 5.862L5.812 9.41a.625.625 0 0 0-.884 0l-.884.884a.625.625 0 0 0 0 .884l4.063 4.063c.244.244.64.244.884 0Z'
+                     strokeLinecap='round'
+                     strokeLinejoin='round'
+                     d='m8.5 12.5 2 2 5-5'
                   />
                </g>
-               <defs>
-                  <filter
-                     id='a'
-                     width='27.375'
-                     height='27.375'
-                     x='-3.576'
-                     y='.424'
-                     colorInterpolationFilters='sRGB'
-                     filterUnits='userSpaceOnUse'
-                  >
-                     <feFlood floodOpacity='0' result='BackgroundImageFix' />
-                     <feColorMatrix
-                        in='SourceAlpha'
-                        result='hardAlpha'
-                        values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-                     />
-                     <feOffset dy='4' />
-                     <feGaussianBlur stdDeviation='2' />
-                     <feComposite in2='hardAlpha' operator='out' />
-                     <feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0' />
-                     <feBlend
-                        in2='BackgroundImageFix'
-                        result='effect1_dropShadow_102_59'
-                     />
-                     <feBlend
-                        in='SourceGraphic'
-                        in2='effect1_dropShadow_102_59'
-                        result='shape'
-                     />
-                  </filter>
-               </defs>
             </svg>
-            <Parraf>This article has been added to your cart</Parraf>
+            <Parraf> {nameItem} has been added to your cart</Parraf>
          </div>
-         <Button className='close-toast'>
+         <Button className='close-toast' action={onClose}>
             <svg
                xmlns='http://www.w3.org/2000/svg'
                width='12'
@@ -77,16 +57,25 @@ export default Toast
 const ToastContainer = styled.div`
    &[id="toast-container"] {
       height: fit-content;
-      position: relative;
+      position: fixed;
+      left: 50%;
+      z-index: 2;
+      bottom: 1%;
+      transform: translate(-50%);
       border-radius: var(--jd-br-s);
       background-color: #55b938;
       align-content: center;
       width: 40%;
-      padding: var(--jd-padding-s);
+      height: 70px;
+      padding: var(--jd-padding-s) var(--jd-padding-l);
       justify-content: center;
       align-items: start;
+      animation: show 1s forwards;
    }
-
+   svg {
+      min-width: 35px;
+      min-height: 35px;
+   }
    .info-toast-container {
       display: flex;
       gap: var(--jd-gap-s);
@@ -94,7 +83,45 @@ const ToastContainer = styled.div`
    }
    .close-toast {
       position: absolute;
+      width: 15px;
+      height: 15px;
       top: 7%;
       right: 0.8%;
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+   @keyframes show {
+      0% {
+         bottom: -20%;
+      }
+      100% {
+         bottom: 2%;
+      }
+   }
+   @media (width<958px) {
+      &[id="toast-container"] {
+         width: 60%;
+      }
+   }
+   @media (width<583px) {
+      &[id="toast-container"] {
+         .info-toast-container {
+            > P {
+               font-size: 1rem;
+            }
+         }
+         width: 80%;
+      }
+   }
+   @media (width<583px) {
+      &[id="toast-container"] {
+         .info-toast-container {
+            > P {
+               font-size: 1rem;
+            }
+         }
+         width: 90%;
+      }
    }
 `

@@ -22,6 +22,8 @@ const Cart = () => {
       )
    }, [])
    const resQuantity = useCallback(el => {
+      console.log("render")
+
       setCart(prevState =>
          prevState.map(item =>
             item.id == el.id && el.quantity > 1
@@ -31,67 +33,79 @@ const Cart = () => {
       )
    }, [])
    return (
-      <ShopSection
-         id='cart-section-page'
-         className={cart.length > 0 && "width-reduced"}
-      >
-         <H2>My shopping cart</H2>
-         {cart.length == 0 && (
-            <ImgHero
-               idNameContainer='empty-cart-container'
-               img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722439506/Proyect%2012%20react/images/empty-Cart_zoztgh.webp'
-               alt='icon-no-items-cart'
-            >
-               <Parraf id='description-empty-cart'>Your cart ist empty</Parraf>
-            </ImgHero>
-         )}
-         {cart.length > 0 && (
-            <>
-               <div id='articles-wrp'>
-                  {cart.length > 0 &&
-                     cart.map(el => (
-                        <DivCart $info={el.title} key={el.id}>
-                           <ImgHero
-                              img={el.img}
-                              alt={`picture-appareal-${el.title}`}
-                           />
-                           <div className='info-article-cart'>
-                              <H3>{el.title}</H3>
-                              <Parraf id='description-appareal'>
-                                 {el.description}
-                              </Parraf>
-                              <Parraf>{el.price}€</Parraf>
-                              <Button
-                                 action={() => {
-                                    handleDelete(el)
-                                 }}
-                              >
-                                 X
-                              </Button>
-                              <div id='counter-container'>
-                                 <div>
-                                    <Button action={() => resQuantity(el)}>-</Button>
-                                    <Button action={() => sumQuantity(el)}>+</Button>
+      <>
+         <H2 id='title-cart-section'>My shopping cart</H2>
+         <ShopSection
+            id='cart-section-page'
+            className={cart.length > 0 && "width-reduced"}
+         >
+            {cart.length == 0 && (
+               <ImgHero
+                  idNameContainer='empty-cart-container'
+                  img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722439506/Proyect%2012%20react/images/empty-Cart_zoztgh.webp'
+                  alt='icon-no-items-cart'
+               >
+                  <Parraf id='description-empty-cart'>Your cart ist empty</Parraf>
+               </ImgHero>
+            )}
+            {cart.length > 0 && (
+               <>
+                  <div id='articles-wrp'>
+                     {cart.length > 0 &&
+                        cart.map(el => (
+                           <DivCart $info={el.title} key={el.id}>
+                              <ImgHero
+                                 img={el.img}
+                                 alt={`picture-appareal-${el.title}`}
+                              />
+                              <div className='info-article-cart'>
+                                 <H3>{el.title}</H3>
+                                 <Parraf id='description-appareal'>
+                                    {el.description}
+                                 </Parraf>
+                                 <Parraf>{el.price}€</Parraf>
+                                 <Button
+                                    action={() => {
+                                       handleDelete(el)
+                                    }}
+                                 >
+                                    X
+                                 </Button>
+                                 <div id='counter-container'>
+                                    <div>
+                                       <Button action={() => resQuantity(el)}>
+                                          -
+                                       </Button>
+                                       <Button action={() => sumQuantity(el)}>
+                                          +
+                                       </Button>
+                                    </div>
+                                    <span>Quantity: {el.quantity}</span>
                                  </div>
-                                 <span>Quantity: {el.quantity}</span>
                               </div>
-                           </div>
-                        </DivCart>
-                     ))}
-                  <div id='total'>
-                     <span> Total:</span>
-                     <span>
-                        {cart
-                           .reduce((acc, el) => el.quantity * el.price + acc, 0)
-                           .toFixed(2)}
-                        €
-                     </span>
+                           </DivCart>
+                        ))}
+                     <div id='total'>
+                        <Button action={() => setCart([])}> Clear Cart</Button>
+                        <div>
+                           <span> Total:</span>
+                           <span>
+                              {cart
+                                 .reduce(
+                                    (acc, el) => el.quantity * el.price + acc,
+                                    0,
+                                 )
+                                 .toFixed(2)}
+                              €
+                           </span>
+                        </div>
+                     </div>
+                     <Button id='buy-btn'>Buy now</Button>
                   </div>
-                  <Button id='buy-btn'>Buy now</Button>
-               </div>
-            </>
-         )}
-      </ShopSection>
+               </>
+            )}
+         </ShopSection>
+      </>
    )
 }
 
@@ -99,17 +113,14 @@ export default Cart
 
 export const ShopSection = styled.section`
    min-height: 85svh;
-   margin: calc(var(--jd-margin-xl) * 2.5) auto;
    display: flex;
    flex-direction: column;
    padding: var(--jd-padding-s);
-   width: 35%;
-
+   width: 45%;
    align-items: center;
+   margin-inline: auto;
    gap: var(--jd-gap-m);
-   > h2 {
-      margin-bottom: var(--jd-margin-l);
-   }
+
    [id="articles-wrp"] {
       width: 100%;
       align-items: center;
@@ -154,14 +165,21 @@ export const ShopSection = styled.section`
       border-radius: var(--jd-br-li);
    }
    [id="total"] {
-      margin-top: var(--jd-margin-m);
       font-weight: 600;
       padding: var(--jd-padding-s);
-      border-radius: var(--jd-br-s);
-      box-shadow: 0px 0px 4px 1px black;
-      > span:last-child {
-         margin-left: 10px;
+      div:last-child {
+         margin-top: var(--jd-margin-m);
+         padding: var(--jd-padding-s);
+         border-radius: var(--jd-br-s);
+
+         box-shadow: 0px 0px 4px 1px black;
+         span:last-child {
+            margin-left: 10px;
+         }
       }
+   }
+   @media (width<531px) {
+      width: 100%;
    }
    @media (width<405px) {
       [id="buy-btn"] {
@@ -214,6 +232,7 @@ export const DivCart = styled.div`
       [id="counter-container"] {
          position: absolute;
          right: 0px;
+         align-items: center;
          bottom: 0px;
          width: 200px;
          display: flex;
@@ -251,22 +270,44 @@ export const DivCart = styled.div`
          }
       }
    }
-   @media (width<405px) {
+   @media (width<540px) {
       width: 90%;
       > .info-article-cart {
          width: 70%;
+
          > h3 {
             font-size: 15px;
+            text-align: center;
          }
 
          > [id="description-appareal"],
          p,
-         [id="counter-container"] > span {
-            font-size: 15px;
+         [id="counter-container"] {
+            padding-bottom: var(--jd-padding-s);
+            rem > span {
+               font-size: 15px;
+            }
          }
+
          > button {
             top: 2px;
             right: 1px;
+         }
+      }
+   }
+   @media (width<395px) {
+      .info-article-cart {
+         [id="counter-container"] {
+            /* position: relative; */
+            /* left: 10px; */
+            justify-content: center;
+            gap: var(--jd-gap-xs);
+            padding-bottom: var(--jd-padding-xs);
+
+            > div {
+               width: 70px;
+               gap: 10px;
+            }
          }
       }
    }
