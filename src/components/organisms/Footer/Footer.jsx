@@ -1,6 +1,5 @@
 import {
    FacebookShareButton,
-   PinterestShareButton,
    TwitterShareButton,
    WhatsappShareButton,
 } from "react-share"
