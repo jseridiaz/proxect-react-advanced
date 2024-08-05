@@ -27,7 +27,7 @@ const StyledUl = styled.ul`
    flex-direction: column;
    gap: var(--jd-gap-s);
    padding: var(--jd-padding-l);
-   > p {
+   > li:first-child {
       margin-bottom: 10px;
       text-decoration: underline;
       font-weight: 600;

@@ -28,7 +28,7 @@ const FooterComponent = () => {
                className='li-footer'
                classAname='a-li-footer'
             >
-               <p>Shop</p>
+               <li>Shop</li>
             </Ul>
             <Ul
                array={secondArrayFooter}
@@ -37,7 +37,7 @@ const FooterComponent = () => {
                className='li-footer'
                classAname='a-li-footer'
             >
-               <p>Company</p>
+               <li>Company</li>
             </Ul>
             <Ul
                array={thirdArrayFooter}
@@ -46,7 +46,7 @@ const FooterComponent = () => {
                className='li-footer'
                classAname='a-li-footer'
             >
-               <p>Support</p>
+               <li>Support</li>
             </Ul>
          </Block>
          <Block className='last-container-footer'>
@@ -69,7 +69,10 @@ const FooterComponent = () => {
                <p>2023 Fashion Store. All rights reserved.</p>
             </Block>
             <div>
-               <FacebookShareButton url='https://proyect-react-advanced-clothes-ecommerce.vercel.app/'>
+               <FacebookShareButton
+                  aria-label='btn-share-facebook'
+                  url='https://proyect-react-advanced-clothes-ecommerce.vercel.app/'
+               >
                   <svg
                      xmlns='http://www.w3.org/2000/svg'
                      width='25'
@@ -83,6 +86,7 @@ const FooterComponent = () => {
                   </svg>
                </FacebookShareButton>
                <TwitterShareButton
+                  aria-label='btn-share-twitter'
                   url='https://proyect-react-advanced-clothes-ecommerce.vercel.app/'
                   title={`FASHION STORE -- Your reliable clothes online shop for this season 🕶️👕.`}
                   hashtags={["trendyclothes,Vogue "]}
@@ -100,6 +104,7 @@ const FooterComponent = () => {
                   </svg>
                </TwitterShareButton>
                <WhatsappShareButton
+                  aria-label='btn-share-whatsapp'
                   url='https://proyect-react-advanced-clothes-ecommerce.vercel.app/'
                   title='FASHION STORE - Clothes and accesories for this current season'
                   separator='--'

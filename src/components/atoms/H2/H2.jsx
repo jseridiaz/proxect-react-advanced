@@ -1,13 +1,14 @@
 import styled from "styled-components"
 
 const H2 = styled.h2`
-   font-size: 53px;
+   font-size: 39px;
    font-weight: bold;
    width: 80%;
    background-color: var(--jd-bg-terciray);
    font-family: "Playfair Display", serif;
    text-align: center;
-   padding: calc(var(--jd-padding-xxl) * 1.7);
+   padding: calc(var(--jd-padding-xxl) * 1);
+   margin-bottom: 1rem;
    -webkit-text-stroke: 0.2px;
    line-height: 60px;
    &[id="title-section-colection"] {

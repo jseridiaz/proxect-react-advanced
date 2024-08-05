@@ -1,15 +1,70 @@
 import React, { memo } from "react"
 import styled from "styled-components"
 
-const ImgHero = ({ img, alt, idName, children, className, idNameContainer }) => {
+const ImgHero = ({
+   kind,
+   img,
+   alt,
+   idName,
+   children,
+   className,
+   idNameContainer,
+}) => {
    return (
-      <ContainerImg className={className} id={idNameContainer}>
-         <img id={idName} src={img} alt={alt} draggable={false} loading='lazy' />
-         {children}
-      </ContainerImg>
+      <>
+         {kind ? (
+            <LiCard className={className} id={idNameContainer}>
+               <img
+                  id={idName}
+                  src={img}
+                  alt={alt}
+                  draggable={false}
+                  loading='lazy'
+               />
+               {children}
+            </LiCard>
+         ) : (
+            <ContainerImg className={className} id={idNameContainer}>
+               <img
+                  id={idName}
+                  src={img}
+                  alt={alt}
+                  draggable={false}
+                  loading='lazy'
+               />
+               {children}
+            </ContainerImg>
+         )}
+      </>
    )
 }
+const LiCard = styled.li`
+   display: flex;
 
+   background-color: transparent;
+   justify-self: center;
+   width: 335px;
+
+   &.card-single {
+      border: 1px solid black;
+      position: relative;
+      height: 425px;
+      overflow: hidden;
+      border-radius: var(--jd-br-card);
+      > img {
+         object-position: 50% 0%;
+         width: 100%;
+      }
+   }
+   @media (width<438px) {
+      &.card-single {
+         width: 85%;
+         > img {
+            object-fit: cover;
+         }
+      }
+   }
+`
 const ContainerImg = styled.div`
    display: flex;
    background-color: transparent;
@@ -195,11 +250,14 @@ const ContainerImg = styled.div`
                font-size: 12px;
             }
             > a {
-               width: 35%;
-               font-size: 15px;
+               width: 70%;
+               align-self: center;
+               font-size: 18px;
+               font-weight: 500;
             }
          }
       }
+
       &[id="container-picture-0"] {
          min-height: 0px;
          > img {

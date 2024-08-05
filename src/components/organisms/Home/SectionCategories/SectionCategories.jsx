@@ -82,9 +82,6 @@ const SectionFlex = styled.section`
          width: 100%;
          margin-bottom: var(--jd-margin-xl);
       }
-      > nav {
-         margin-bottom: var(--jd-margin-xl);
-      }
    }
    @media (width<361px) {
       > h2 {

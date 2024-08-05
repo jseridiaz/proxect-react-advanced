@@ -126,6 +126,7 @@ const SectionStyled = styled(ShopSection)`
          height: 30px;
          border: none;
          top: 2px;
+         /* right: -42px; */
 
          &:hover {
             background-color: transparent;
@@ -141,6 +142,13 @@ const SectionStyled = styled(ShopSection)`
       font-size: 32px;
       width: 100%;
       border-bottom: 2px solid black;
+   }
+   @media (width<1170px) {
+      .info-article-cart {
+         > button.icon-heart-card {
+            right: 0px;
+         }
+      }
    }
    @media (width<863px) {
       > div[id="favourites-article-container"] {

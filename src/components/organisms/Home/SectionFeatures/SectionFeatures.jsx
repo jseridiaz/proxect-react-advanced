@@ -173,7 +173,8 @@ const SectionBlock = styled.section`
    }
    h2 {
       padding: var(--jd-padding-l);
-      font-size: 30px;
+      font-size: 37.9px;
+      width: 100%;
    }
    .features-picture-container:last-child {
       background-color: aliceblue;
