@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
 
 import arrayCards from "../../../../data/Home/sectionCategories/arrayCards/arrayCards"
@@ -23,7 +23,7 @@ const SectionCategories = () => {
    )
 }
 
-export default SectionCategories
+export default memo(SectionCategories)
 
 const SectionFlex = styled.section`
    display: flex;

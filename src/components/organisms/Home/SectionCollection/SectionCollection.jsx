@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
 
 import { arraySectionCollection } from "../../../../data/HomeDatas/arraySectionCollection"
@@ -50,7 +50,7 @@ const SectionCollection = () => {
    )
 }
 
-export default SectionCollection
+export default memo(SectionCollection)
 
 export const SectionGrid = styled.section`
    padding: calc(var(--jd-padding-xxl) * 2) calc(var(--jd-padding-xxl) * 2.1);

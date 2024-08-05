@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
 
 import IconArrowCard from "../../../../data/iconArrowCard/IconArrowCard"
@@ -53,7 +53,7 @@ const SectionFeatures = () => {
    )
 }
 
-export default SectionFeatures
+export default memo(SectionFeatures)
 
 const SectionBlock = styled.section`
    display: flex;
