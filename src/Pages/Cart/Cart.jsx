@@ -40,78 +40,79 @@ const Cart = () => {
             description='Handle your shopping cart and buy your articles'
             img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
          />
-
-         <H2 id='title-cart-section'>My shopping cart</H2>
-         <ShopSection
-            id='cart-section-page'
-            className={cart.length > 0 && "width-reduced"}
-         >
-            {cart.length == 0 && (
-               <ImgHero
-                  idNameContainer='empty-cart-container'
-                  img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722439506/Proyect%2012%20react/images/empty-Cart_zoztgh.webp'
-                  alt='icon-no-items-cart'
-               >
-                  <Parraf id='description-empty-cart'>Your cart ist empty</Parraf>
-               </ImgHero>
-            )}
-            {cart.length > 0 && (
-               <>
-                  <div id='articles-wrp'>
-                     {cart.length > 0 &&
-                        cart.map(el => (
-                           <DivCart $info={el.title} key={el.id}>
-                              <ImgHero
-                                 img={el.img}
-                                 alt={`picture-appareal-${el.title}`}
-                              />
-                              <div className='info-article-cart'>
-                                 <H3>{el.title}</H3>
-                                 <Parraf id='description-appareal'>
-                                    {el.description}
-                                 </Parraf>
-                                 <Parraf>{el.price}€</Parraf>
-                                 <Button
-                                    action={() => {
-                                       handleDelete(el)
-                                    }}
-                                 >
-                                    X
-                                 </Button>
-                                 <div id='counter-container'>
-                                    <div>
-                                       <Button action={() => resQuantity(el)}>
-                                          -
-                                       </Button>
-                                       <Button action={() => sumQuantity(el)}>
-                                          +
-                                       </Button>
+         <main>
+            <H2 id='title-cart-section'>My shopping cart</H2>
+            <ShopSection
+               id='cart-section-page'
+               className={cart.length > 0 && "width-reduced"}
+            >
+               {cart.length == 0 && (
+                  <ImgHero
+                     idNameContainer='empty-cart-container'
+                     img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722439506/Proyect%2012%20react/images/empty-Cart_zoztgh.webp'
+                     alt='icon-no-items-cart'
+                  >
+                     <Parraf id='description-empty-cart'>Your cart ist empty</Parraf>
+                  </ImgHero>
+               )}
+               {cart.length > 0 && (
+                  <>
+                     <div id='articles-wrp'>
+                        {cart.length > 0 &&
+                           cart.map(el => (
+                              <DivCart $info={el.title} key={el.id}>
+                                 <ImgHero
+                                    img={el.img}
+                                    alt={`picture-appareal-${el.title}`}
+                                 />
+                                 <div className='info-article-cart'>
+                                    <H3>{el.title}</H3>
+                                    <Parraf id='description-appareal'>
+                                       {el.description}
+                                    </Parraf>
+                                    <Parraf>{el.price}€</Parraf>
+                                    <Button
+                                       action={() => {
+                                          handleDelete(el)
+                                       }}
+                                    >
+                                       X
+                                    </Button>
+                                    <div id='counter-container'>
+                                       <div>
+                                          <Button action={() => resQuantity(el)}>
+                                             -
+                                          </Button>
+                                          <Button action={() => sumQuantity(el)}>
+                                             +
+                                          </Button>
+                                       </div>
+                                       <span>Quantity: {el.quantity}</span>
                                     </div>
-                                    <span>Quantity: {el.quantity}</span>
                                  </div>
-                              </div>
-                           </DivCart>
-                        ))}
-                     <div id='total'>
-                        <Button action={() => setCart([])}> Clear Cart</Button>
-                        <div>
-                           <span> Total:</span>
-                           <span>
-                              {cart
-                                 .reduce(
-                                    (acc, el) => el.quantity * el.price + acc,
-                                    0,
-                                 )
-                                 .toFixed(2)}
-                              €
-                           </span>
+                              </DivCart>
+                           ))}
+                        <div id='total'>
+                           <Button action={() => setCart([])}> Clear Cart</Button>
+                           <div>
+                              <span> Total:</span>
+                              <span>
+                                 {cart
+                                    .reduce(
+                                       (acc, el) => el.quantity * el.price + acc,
+                                       0,
+                                    )
+                                    .toFixed(2)}
+                                 €
+                              </span>
+                           </div>
                         </div>
+                        <Button id='buy-btn'>Buy now</Button>
                      </div>
-                     <Button id='buy-btn'>Buy now</Button>
-                  </div>
-               </>
-            )}
-         </ShopSection>
+                  </>
+               )}
+            </ShopSection>
+         </main>
       </>
    )
 }

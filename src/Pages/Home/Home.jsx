@@ -19,38 +19,41 @@ const Home = () => {
           to find out all modern trendy clothes of the current and the next season.'
             img='https://res.cloudinary.com/ddybbosdk/image/upload/v1722546207/Proyect%2012%20react/images/zara-model_1_rzgbw0.avif'
          />
-         <Hero>
-            <div className='hero-container'>
-               <p>Experience fashion like never before</p>
-               <H2>
-                  Elevate Your Style With Fashion Store: Where Fashion Meets Passion
-               </H2>
+         <main>
+            <Hero>
+               <div className='hero-container'>
+                  <p>Experience fashion like never before</p>
+                  <H2>
+                     Elevate Your Style With Fashion Store: Where Fashion Meets
+                     Passion
+                  </H2>
 
-               <p id='description-hero'>
-                  Discover a world of fashion-forward trends, curated collections,
-                  and timeless pieces that inspire. Unleash your inner fashionista
-                  and embark on a journey of confidence, elegance and impeccable
-                  style.
-               </p>
+                  <p id='description-hero'>
+                     Discover a world of fashion-forward trends, curated collections,
+                     and timeless pieces that inspire. Unleash your inner fashionista
+                     and embark on a journey of confidence, elegance and impeccable
+                     style.
+                  </p>
 
-               <Li id='btn-main-cta' to='/home'>
-                  Start <Space /> Shopping
-               </Li>
-            </div>
-            <Article id='article-hero-pictures'>
-               {arrayPicturesHero.map((el, index) => (
-                  <ImgHero
-                     key={`${el.id}-${index}`}
-                     idName={el.id}
-                     img={el.src}
-                     alt={el.alt}
-                  />
-               ))}
-            </Article>
-            <div id='effect-rounded'></div>
-         </Hero>
-         <SectionCollection />
-         <SectionCategories />
+                  <Li id='btn-main-cta' to='/home'>
+                     Start <Space /> Shopping
+                  </Li>
+               </div>
+               <Article id='article-hero-pictures'>
+                  {arrayPicturesHero.map((el, index) => (
+                     <ImgHero
+                        key={`${el.id}-${index}`}
+                        idName={el.id}
+                        img={el.src}
+                        alt={el.alt}
+                     />
+                  ))}
+               </Article>
+               <div id='effect-rounded'></div>
+            </Hero>
+            <SectionCollection />
+            <SectionCategories />
+         </main>
          <SectionFeatures />
       </>
    )
