@@ -55,6 +55,24 @@
    --jd-color-br-hover: 2px solid #767676;
    --jd-color-br-focus: 2px solid #4200ff;
 }
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background: #b8b7b7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: var(--jd-bgcolor-primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: rgb(105, 105, 255);
+}
 body {
    max-width: 100svw;
 }
