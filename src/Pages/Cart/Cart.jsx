@@ -7,6 +7,7 @@ import H3 from "../../components/atoms/H3/H3"
 import ImgHero from "../../components/atoms/Img/Img"
 import Parraf from "../../components/atoms/Parraf/Parraf"
 import Seo from "../../components/organisms/Seo/Seo"
+import { calcTotal } from "../../utils/functions/calcTotal/calcTotal"
 import { CartContext } from "../../utils/useContext/useContextCart"
 
 const Cart = () => {
@@ -23,7 +24,7 @@ const Cart = () => {
       )
    }, [])
    const resQuantity = useCallback(el => {
-      console.log("render")
+      console.log("renders")
 
       setCart(prevState =>
          prevState.map(item =>
@@ -33,6 +34,7 @@ const Cart = () => {
          ),
       )
    }, [])
+   const getTotal = useCallback(() => calcTotal(cart), [cart])
    return (
       <>
          <Seo
@@ -97,12 +99,14 @@ const Cart = () => {
                            <div>
                               <span> Total:</span>
                               <span>
-                                 {cart
+                                 {
+                                    getTotal(cart) /* {cart
                                     .reduce(
                                        (acc, el) => el.quantity * el.price + acc,
                                        0,
                                     )
-                                    .toFixed(2)}
+                                    .toFixed(2)} */
+                                 }
                                  €
                               </span>
                            </div>
