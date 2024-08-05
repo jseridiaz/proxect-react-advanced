@@ -84,12 +84,7 @@ const ContainerImg = styled.div`
          height: 76.6%;
       }
    }
-   /* &.card-single:last-child {
-      > img {
-         object-fit: fill;
-         border-radius: var(--jd-br-l);
-      }
-   } */
+
    &.features-picture-container:not(:last-child) {
       width: 49%;
       position: relative;
@@ -137,13 +132,20 @@ const ContainerImg = styled.div`
       &[id="container-picture-0"] {
          grid-column: 1/-1;
          min-height: 520px;
+         width: 95%;
          > img {
             object-fit: cover;
+            border-radius: 5rem;
          }
       }
       &[id="container-picture-1"] {
          grid-column: 1/-1;
          grid-row: 3/4;
+         width: 95%;
+         > img {
+            border-radius: 5rem;
+         }
+
          a {
             border-radius: calc(var(--jd-br-s) * 2);
          }
@@ -160,47 +162,21 @@ const ContainerImg = styled.div`
          width: 90%;
       }
    }
-   @media (width<1002px) {
-      &.features-picture-container:last-child {
-         height: 450px;
-         > div {
-            min-width: 490px;
-         }
-         > img {
-            object-fit: cover;
-            object-position: 10%;
-         }
-      }
-   }
-   @media (width<839px) {
-      &.features-picture-container:last-child {
-         height: 850px;
-         flex-wrap: wrap;
 
-         > div {
-            min-width: 0px;
-            width: 100%;
-            height: 50%;
-         }
-         > img {
-            border-radius: 20px 20px 0px 0px;
-            align-self: start;
-            position: relative;
-            object-fit: fill;
-            width: 100%;
-            height: 50%;
-         }
-      }
-   }
-   @media (width<800px) {
-      &.features-picture-container:not(:last-child) {
-         > div {
+   @media (width<839px) {
+      &[id="container-picture-0"],
+      &[id="container-picture-1"] {
+         > .info-pictures {
             > h3 {
-               font-size: 29px;
+               font-size: 28px;
+            }
+            > p {
+               font-size: 16px;
             }
          }
       }
    }
+
    @media (width<471px) {
       &[id="container-picture-0"],
       &[id="container-picture-1"],
@@ -209,14 +185,14 @@ const ContainerImg = styled.div`
          > img {
             border-radius: var(--jd-br-card);
          }
-         > div {
+         > .info-pictures {
             width: 100%;
-            padding-inline: var(--jd-padding-xs);
+            padding-inline: var(--jd-padding-s);
             > h3 {
-               font-size: 25px;
+               font-size: 20px;
             }
             > p {
-               font-size: 14px;
+               font-size: 12px;
             }
             > a {
                width: 35%;
@@ -266,6 +242,25 @@ const ContainerImg = styled.div`
             }
             > p {
                font-size: 17px;
+            }
+         }
+      }
+   }
+   @media (width<384px) {
+      &[id="container-picture-0"] {
+         > img {
+            height: 100%;
+         }
+         > .info-pictures {
+            > p {
+               display: none;
+            }
+         }
+      }
+      &[id="container-picture-0"]:hover {
+         > .info-pictures {
+            > p {
+               display: block;
             }
          }
       }

@@ -78,4 +78,7 @@ export const SectionGrid = styled.section`
    @media (width<471px) {
       grid-template-rows: auto 400px auto auto auto;
    }
+   @media (width<384px) {
+      grid-template-rows: auto 300px auto auto auto;
+   }
 `

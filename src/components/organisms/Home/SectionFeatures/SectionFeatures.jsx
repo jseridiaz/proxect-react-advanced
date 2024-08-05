@@ -29,7 +29,7 @@ const SectionFeatures = () => {
             alt='picture-collection-john-lewis'
          >
             <Description
-               h3='John Lewis : Any Day Ceollections'
+               h3='John Lewis : Any Day Collections'
                className='description-collection'
                btn='Shop now'
             >
@@ -94,8 +94,6 @@ const SectionBlock = styled.section`
       }
       > div {
          > a {
-            width: 40%;
-            height: 48px;
             background-color: var(--jd-btn-primary);
             border-radius: var(--jd-br-s);
             outline: 3px solid white;
@@ -107,13 +105,6 @@ const SectionBlock = styled.section`
          width: 100%;
       }
    }
-   @media (width<884px) {
-      .features-picture-container:last-child {
-         > img {
-            width: 34%;
-         }
-      }
-   }
    @media (width<844px) {
       .features-picture-container:not(:last-child) {
          > div {
@@ -121,19 +112,38 @@ const SectionBlock = styled.section`
          }
       }
       .features-picture-container:last-child {
+         min-height: 800px;
+         width: 100%;
+         flex-wrap: wrap;
          > img {
             object-fit: cover;
             object-position: 50% 27%;
             width: 100%;
+            height: 44%;
+         }
+         > div {
+            height: 59%;
+            width: 100%;
+            > a {
+               position: relative;
+               left: 50%;
+               transform: translate(-50%);
+            }
          }
       }
    }
+
    @media (width<716px) {
       .features-picture-container:not(:last-child) {
          height: 550px;
          > img {
             border-radius: 20px;
             object-fit: cover;
+         }
+         > div {
+            a.link-button {
+               width: 70%;
+            }
          }
       }
    }
@@ -148,14 +158,22 @@ const SectionBlock = styled.section`
             padding: var(--jd-padding-xs);
             > h3 {
                font-size: 29px;
+               padding: var(--jd-padding-s);
             }
 
             a.link-button {
                width: 70%;
+               margin-left: 50%;
+               transform: translate(-50%);
                height: 50px;
+               margin-bottom: var(--jd-margin-l);
             }
          }
       }
+   }
+   h2 {
+      padding: var(--jd-padding-l);
+      font-size: 30px;
    }
    .features-picture-container:last-child {
       background-color: aliceblue;
@@ -165,8 +183,11 @@ const SectionBlock = styled.section`
          p {
             color: black;
          }
+         h3 {
+            text-align: center;
+         }
          > a {
-            width: 70%;
+            width: 60%;
             height: 58px;
          }
       }

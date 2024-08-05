@@ -33,9 +33,6 @@ const Favourites = () => {
          ? setCart(cart.filter(item => el.id != item.id))
          : addToCart(el, cart, setCart)
    }
-   // const findInCart = (array, el) => {
-   //    array.some(item => item.id == el.id)
-   // }
 
    return (
       <>

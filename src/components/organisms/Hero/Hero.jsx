@@ -12,7 +12,12 @@ const Hero = styled.section`
    align-items: center;
    justify-content: space-around;
    height: fit-content;
-
+   [id="share"] {
+      width: 100px;
+      height: 100px;
+      color: #d32f2f;
+      background-color: #d24a4a;
+   }
    > div {
       display: flex;
       flex-direction: column;

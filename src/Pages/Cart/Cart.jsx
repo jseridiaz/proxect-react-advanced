@@ -1,5 +1,4 @@
 import { useCallback, useContext } from "react"
-import { Helmet } from "react-helmet-async"
 import styled from "styled-components"
 
 import Button from "../../components/atoms/button/button"
@@ -149,13 +148,13 @@ export const ShopSection = styled.section`
       flex-direction: column;
       align-items: center;
       width: 200px;
-
       height: 300px;
       > p {
          text-align: center;
          font-weight: 600;
          position: relative;
          bottom: 70px;
+         width: 100%;
       }
       > img {
          width: 150%;

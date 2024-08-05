@@ -103,11 +103,11 @@ const Header = styled.header`
          width: 50%;
          transform: ${({ $menu }) => ($menu ? "scaleX(1)" : "scalex(0)")};
          align-items: center;
-         margin-top: 794px;
+         top: 100%;
          padding: var(--jd-padding-m);
          background-color: var(--jd-bgcolor-primary);
          right: 0px;
-         height: 100svh;
+         height: 85svh;
          transition: all 0.3s ease;
          > ul {
             height: 100%;
@@ -124,10 +124,10 @@ const Header = styled.header`
       gap: 0px;
       > [id="container-li-clothes"] {
          width: 100%;
-         margin-top: 827px;
+         top: 100%;
       }
       > [id="container-icons"] {
-         width: 100%;
+         width: 80%;
          > ul {
             justify-content: center;
          }

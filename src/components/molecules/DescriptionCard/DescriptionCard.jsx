@@ -84,4 +84,7 @@ const ContainerDescription = styled.div`
          height: 100%;
       }
    }
+   @media (width<361px) {
+      height: 150px;
+   }
 `

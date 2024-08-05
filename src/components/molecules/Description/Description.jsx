@@ -31,19 +31,13 @@ const Description = ({ h3, p, btn, img, arrow, children, className, id }) => {
 export default Description
 const DivColumn = styled.div`
    display: flex;
-
    position: absolute;
    bottom: 0;
    width: 95%;
    flex-direction: column;
    position: absolute;
    padding-inline: var(--jd-padding-l);
-   &[id="container-parraf-73c153028a54"] {
-      width: 86%;
-   }
-   &[id="container-parraf-c0832adbd8b0"] {
-      > p {
-         width: 91%;
-      }
+   @media (width<1254px) {
+      padding: var(--jd-padding-l) var(--jd-padding-xxl);
    }
 `
