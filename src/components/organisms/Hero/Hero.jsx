@@ -78,7 +78,7 @@ const Hero = styled.section`
    }
    @media (width<1414px) {
       [id="effect-rounded"] {
-         width: 69.4599%;
+         width: 99%;
          bottom: -40.1%;
       }
    }
