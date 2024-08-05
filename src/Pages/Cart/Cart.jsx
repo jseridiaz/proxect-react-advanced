@@ -16,16 +16,14 @@ const Cart = () => {
    const handleDelete = el => {
       setCart(cart.filter(item => item.id != el.id))
    }
-   const sumQuantity = useCallback(el => {
+   const sumQuantity = el =>
       setCart(prevState =>
          prevState.map(item =>
             item.id == el.id ? { ...item, quantity: item.quantity + 1 } : item,
          ),
       )
-   }, [])
-   const resQuantity = useCallback(el => {
-      console.log("renders")
 
+   const resQuantity = el =>
       setCart(prevState =>
          prevState.map(item =>
             item.id == el.id && el.quantity > 1
@@ -33,8 +31,7 @@ const Cart = () => {
                : item,
          ),
       )
-   }, [])
-   const getTotal = useCallback(() => calcTotal(cart), [cart])
+   const getTotal = () => calcTotal(cart)
    return (
       <>
          <Seo
