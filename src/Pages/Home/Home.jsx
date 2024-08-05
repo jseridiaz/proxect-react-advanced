@@ -45,11 +45,10 @@ const Home = () => {
                   and embark on a journey of confidence, elegance and impeccable
                   style.
                </p>
-               <Button id='btn-main-cta' bgColor='black' fontColor={"#F6F6F6"}>
-                  <Li to='/shop'>
-                     Start <Space /> Shopping
-                  </Li>
-               </Button>
+
+               <Li id='btn-main-cta' to='/shop'>
+                  Start <Space /> Shopping
+               </Li>
             </div>
             <Article id='article-hero-pictures'>
                {arrayPicturesHero.map((el, index) => (

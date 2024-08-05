@@ -14,6 +14,7 @@ const Button = ({
    title,
    className,
    $boolean,
+   label,
 }) => (
    <>
       {goTo ? (
@@ -30,6 +31,7 @@ const Button = ({
             id={id}
             $primary={bgColor}
             $color={fontColor}
+            aria-label={label}
          >
             {text}
             {children}

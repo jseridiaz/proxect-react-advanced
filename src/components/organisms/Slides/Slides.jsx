@@ -23,38 +23,36 @@ const Slides = () => {
             <div>
                <Ul className='flex'>
                   {arrayToChange.map((el, i) => (
-                     <ImgHero
-                        className='card-single'
-                        key={el.id}
-                        img={el.img}
-                        alt={el.alt}
-                     >
-                        <Button
-                           className='icon-heart-card'
-                           action={() => {
-                              handleFavourite(el, setArrayToChange, arrayToChange)
-                           }}
-                        >
-                           {el.favourite == false ? (
-                              <TypeHeart fillColor='currentColor' />
-                           ) : (
-                              <TypeHeart fillColor='red' />
-                           )}
-                        </Button>
-                        <DescriptionCard
-                           key={i}
-                           name={el.title}
-                           infoArticle={el.description}
-                           price={el.price.toString().replace(".", "'")}
-                           callback={setBoolean}
-                           click={() => {
-                              addToCart(el, cart, setCart)
-                              setElSelected(el.title)
-                           }}
-                           booleanState={boolean}
-                           selected={elSelected}
-                        />
-                     </ImgHero>
+                     <li key={el.id}>
+                        <ImgHero className='card-single' img={el.img} alt={el.alt}>
+                           <Button
+                              className='icon-heart-card'
+                              label='add-to-favourites'
+                              action={() => {
+                                 handleFavourite(el, setArrayToChange, arrayToChange)
+                              }}
+                           >
+                              {el.favourite == false ? (
+                                 <TypeHeart fillColor='currentColor' />
+                              ) : (
+                                 <TypeHeart fillColor='red' />
+                              )}
+                           </Button>
+                           <DescriptionCard
+                              key={i}
+                              name={el.title}
+                              infoArticle={el.description}
+                              price={el.price.toString().replace(".", "'")}
+                              callback={setBoolean}
+                              click={() => {
+                                 addToCart(el, cart, setCart)
+                                 setElSelected(el.title)
+                              }}
+                              booleanState={boolean}
+                              selected={elSelected}
+                           />
+                        </ImgHero>
+                     </li>
                   ))}
                </Ul>
             </div>
