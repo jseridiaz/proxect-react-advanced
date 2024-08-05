@@ -46,7 +46,7 @@ const Home = () => {
                   style.
                </p>
 
-               <Li id='btn-main-cta' to='/shop'>
+               <Li id='btn-main-cta' to='/home'>
                   Start <Space /> Shopping
                </Li>
             </div>
